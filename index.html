@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Portfólio imersivo de G3nos Editz: 17 projetos de anime edit, motion, VFX e edição cinematográfica apresentados em uma workstation 3D." name="description"/>
+<meta content="#07070b" name="theme-color"/>
+<title>G3nos Editz — Portfólio Imersivo de Edição e Motion</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+<canvas aria-hidden="true" id="webglScene"></canvas>
+<canvas aria-hidden="true" id="space"></canvas>
+<div class="boot-screen" id="bootScreen">
+<div class="boot-logo"><strong>G3NOS</strong><span>EDITZ</span></div>
+<div class="boot-copy">INICIALIZANDO EXPERIÊNCIA 3D</div>
+<div class="boot-track"><i id="bootBar"></i></div>
+<small id="bootPercent">0%</small>
+</div>
+<div aria-hidden="true" class="grain"></div>
+<div class="progress" id="progress"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"><span>PLAY</span></div>
+<header class="header">
+<a aria-label="Ir para o início" class="brand magnetic" href="#inicio">
+<strong>G3NOS</strong><span>EDITZ</span><i>シ</i>
+</a>
+<button aria-expanded="false" aria-label="Abrir menu" class="menu-toggle" id="menuToggle" type="button">
+<span></span><span></span>
+</button>
+<nav class="nav" id="nav">
+<a href="#sobre">Sobre</a>
+<a href="#portfolio">Trabalhos</a>
+<a href="#servicos">Serviços</a>
+<a class="nav-cta magnetic" href="#contato">Criar projeto</a>
+</nav>
+</header>
+<main>
+<section class="hero" id="inicio">
+<div aria-hidden="true" class="scene-hud">
+<span class="hud-status"><i></i> WEBGL EXPERIENCE</span>
+<span class="hud-coordinates" id="hudCoordinates">X 000 / Y 000</span>
+</div>
+<div class="hero-copy reveal">
+<p class="eyebrow"><span></span> EDITOR • MOTION • ANIME</p>
+<h1>Eu transformo<br/>cenas em <em>impacto.</em></h1>
+<p class="hero-lead">Edits construídas com ritmo, composição e energia visual. Uma experiência criada para ser sentida, não apenas assistida.</p>
+<div class="hero-actions">
+<button class="btn btn-primary magnetic" data-open-index="0" type="button">Assistir destaque <b>▶</b></button>
+<a class="btn btn-ghost magnetic" href="#portfolio">Explorar trabalhos <b>↓</b></a>
+<button class="btn btn-software magnetic" id="openWorkstation" type="button">Abrir workstation <b>⌘</b></button>
+</div>
+<div class="hero-metrics">
+<div><strong>2020</strong><span>início da jornada</span></div>
+<div><strong>17</strong><span>edits selecionadas</span></div>
+<div><strong>17/17</strong><span>projetos documentados</span></div>
+</div>
+</div>
+<div class="studio reveal" id="studio">
+<div class="studio-grid"></div>
+<div class="studio-halo halo-a"></div>
+<div class="studio-halo halo-b"></div>
+<div class="screen-rig" id="screenRig">
+<div class="screen-shell">
+<div class="screen">
+<img alt="Edit em destaque" data-fallback="https://i.ytimg.com/vi/xu1q9g6cG6Q/hqdefault.jpg" src="https://i.ytimg.com/vi/xu1q9g6cG6Q/maxresdefault.jpg"/>
+<div class="screen-overlay"></div>
+<div class="screen-scan"></div>
+<div class="screen-ui">
+<span>PREVIEW / 01</span>
+<span>00:00:17</span>
+</div>
+<button aria-label="Assistir edit em destaque" class="screen-button" data-open-index="0" type="button">▶</button>
+</div>
+</div>
+<div class="screen-arm"></div>
+<div class="screen-foot"></div>
+</div>
+<div class="layer layer-video">
+<span>VIDEO 01</span><i></i><i></i><i></i><i></i><i></i>
+</div>
+<div class="layer layer-fx">
+<span>ADJUSTMENT</span><i></i><i></i><i></i>
+</div>
+<div class="layer layer-audio">
+<span>AUDIO</span>
+<div class="wave"><i style="--h:20%"></i><i style="--h:37%"></i><i style="--h:54%"></i><i style="--h:71%"></i><i style="--h:88%"></i><i style="--h:30%"></i><i style="--h:47%"></i><i style="--h:64%"></i><i style="--h:81%"></i><i style="--h:23%"></i><i style="--h:40%"></i><i style="--h:57%"></i><i style="--h:74%"></i><i style="--h:91%"></i><i style="--h:33%"></i><i style="--h:50%"></i><i style="--h:67%"></i><i style="--h:84%"></i><i style="--h:26%"></i><i style="--h:43%"></i><i style="--h:60%"></i><i style="--h:77%"></i><i style="--h:94%"></i><i style="--h:36%"></i><i style="--h:53%"></i><i style="--h:70%"></i><i style="--h:87%"></i><i style="--h:29%"></i></div>
+</div>
+<div class="float-label label-a">MOTION</div>
+<div class="float-label label-b">SYNC</div>
+<div class="float-label label-c">VFX</div>
+</div>
+<a class="scroll-cue" href="#sobre"><span>SCROLL</span><i></i></a>
+</section>
+<div aria-hidden="true" class="ticker">
+<div>ANIME EDITS ✦ AFTER EFFECTS ✦ MOTION ✦ ROTOSCOPIA ✦ SHORT FORM ✦ COLOR GRADING ✦ TRANSIÇÕES ✦</div>
+<div>ANIME EDITS ✦ AFTER EFFECTS ✦ MOTION ✦ ROTOSCOPIA ✦ SHORT FORM ✦ COLOR GRADING ✦ TRANSIÇÕES ✦</div>
+</div>
+<section class="section about" id="sobre">
+<div class="section-title reveal">
+<p class="eyebrow"><span></span> SOBRE MIM</p>
+<h2>Da primeira edit<br/>ao próximo nível.</h2>
+</div>
+<div class="about-layout">
+<div class="about-copy reveal">
+<p>Comecei a editar em <strong>2020</strong>, criando vídeos curtos de anime e experimentando sincronização, músicas e efeitos.</p>
+<p>Com o tempo, passei a explorar filmes, conteúdos verticais, composição, rotoscopia, transições e motion no After Effects.</p>
+<p>Hoje, cada projeto é uma oportunidade de construir uma experiência visual com personalidade e ritmo.</p>
+<a class="text-link magnetic" href="https://www.youtube.com/@g3noseditz" rel="noopener" target="_blank">Conhecer o canal ↗</a>
+</div>
+<div class="skill-stack reveal">
+<article style="--z:0"><span>01</span><strong>RITMO</strong><small>Cortes sincronizados e impacto musical.</small></article>
+<article style="--z:1"><span>02</span><strong>COMPOSIÇÃO</strong><small>Profundidade, foco e direção visual.</small></article>
+<article style="--z:2"><span>03</span><strong>MOTION</strong><small>Movimento que reforça cada cena.</small></article>
+<article style="--z:3"><span>04</span><strong>IDENTIDADE</strong><small>Estilo reconhecível em cada trabalho.</small></article>
+</div>
+</div>
+</section>
+<section class="timeline-world">
+<div class="timeline-copy reveal">
+<p class="eyebrow"><span></span> PROCESSO CRIATIVO</p>
+<h2>Uma edit é construída<br/>em camadas.</h2>
+<p>Cada elemento entra no momento certo: cena, ritmo, efeitos, cor e acabamento.</p>
+</div>
+<div class="timeline-stage reveal" id="timelineStage">
+<div class="timeline-ruler">
+<span>00:00</span><span>00:04</span><span>00:08</span><span>00:12</span><span>00:16</span>
+</div>
+<div class="timeline-playhead"></div>
+<div class="track track-1"><b>VÍDEO</b><i></i><i></i><i></i></div>
+<div class="track track-2"><b>EFEITOS</b><i></i><i></i></div>
+<div class="track track-3"><b>COR</b><i></i></div>
+<div class="track track-4"><b>ÁUDIO</b><div class="mini-wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+</div>
+</section>
+<section class="webgl-showcase" id="universo">
+<div class="webgl-copy reveal">
+<p class="eyebrow"><span></span> UNIVERSO G3NOS</p>
+<h2>Entre dentro<br/>da edição.</h2>
+<p>Câmera, luzes, partículas e objetos tridimensionais respondem ao seu movimento em tempo real.</p>
+<div class="webgl-legend">
+<span>◉ Mover o mouse</span><span>↕ Rolar</span><span>▶ Abrir edits</span>
+</div>
+</div>
+<div aria-hidden="true" class="portal reveal">
+<div class="portal-ring ring-a"></div>
+<div class="portal-ring ring-b"></div>
+<div class="portal-ring ring-c"></div>
+<div class="portal-core"><strong>17</strong><span>EDITS</span></div>
+</div>
+</section>
+<section class="section portfolio" id="portfolio">
+<div class="section-title portfolio-title reveal">
+<div>
+<p class="eyebrow"><span></span> PORTFÓLIO</p>
+<h2>17 edits.<br/>Uma identidade.</h2>
+</div>
+<p>Cada trabalho agora possui nome, conceito, ficha técnica, paleta própria e uma apresentação consistente em toda a experiência.</p>
+</div>
+<div class="ring-section reveal">
+<div class="ring-copy">
+<span>ARRASTE PARA GIRAR</span>
+<strong>Seleção orbital</strong>
+<small>As 17 edits em um carrossel tridimensional.</small>
+</div>
+<div class="ring-controls">
+<button aria-label="Girar para esquerda" id="ringPrev" type="button">‹</button>
+<button aria-label="Girar para direita" id="ringNext" type="button">›</button>
+</div>
+<div class="ring-viewport" id="ringViewport">
+<div class="ring" id="ring"></div>
+</div>
+</div>
+<div class="portfolio-bar reveal">
+<div class="filters">
+<button class="filter active magnetic" data-filter="all" type="button">Todas</button>
+<button class="filter magnetic" data-filter="featured" type="button">Destaques</button>
+<button class="filter magnetic" data-filter="recent" type="button">Recentes</button>
+</div>
+<span><i></i> 17 trabalhos disponíveis</span>
+</div>
+<div class="project-grid" id="projectGrid"></div>
+</section>
+<section class="section services" id="servicos">
+<div class="section-title reveal">
+<p class="eyebrow"><span></span> SERVIÇOS</p>
+<h2>Do conceito<br/>ao frame final.</h2>
+</div>
+<div class="service-grid">
+<article class="service reveal"><span>01</span><h3>Anime edits</h3><p>Montagem, sincronização, efeitos e acabamento visual.</p></article>
+<article class="service reveal"><span>02</span><h3>Short form</h3><p>Vídeos verticais para TikTok, Reels e YouTube Shorts.</p></article>
+<article class="service reveal"><span>03</span><h3>Motion &amp; VFX</h3><p>Textos animados, transições, composição e efeitos.</p></article>
+<article class="service reveal"><span>04</span><h3>Edição criativa</h3><p>Projetos de cultura pop, filmes, games e música.</p></article>
+</div>
+</section>
+<section class="contact" id="contato">
+<div class="contact-orbit"></div>
+<p class="eyebrow reveal"><span></span> VAMOS CRIAR</p>
+<h2 class="reveal">Tem uma ideia?<br/><em>Vamos dar movimento.</em></h2>
+<div class="contact-actions reveal">
+<a class="btn btn-primary magnetic" href="https://www.youtube.com/@g3noseditz" rel="noopener" target="_blank">YouTube ↗</a>
+<a class="btn btn-ghost magnetic" href="https://www.tiktok.com/@.d34d.since.2020?lang=en" rel="noopener" target="_blank">TikTok ↗</a>
+</div>
+</section>
+</main>
+<footer>
+<a class="brand" href="#inicio"><strong>G3NOS</strong><span>EDITZ</span><i>シ</i></a>
+<p>Editor desde 2020 • Portfólio 3D</p>
+<a href="#inicio">Voltar ao topo ↑</a>
+</footer>
+<section aria-hidden="true" class="workstation" id="workstation">
+<div class="ws-window">
+<header class="ws-topbar">
+<div class="ws-brand"><i></i><strong>G3NOS EDITZ</strong><span>Creative Workstation 2026</span></div>
+<nav aria-label="Áreas da workstation" class="ws-tabs">
+<button class="active" data-ws-tab="projects" type="button">Projects</button>
+<button data-ws-tab="composition" type="button">Composition</button>
+<button data-ws-tab="effects" type="button">Effects</button>
+<button data-ws-tab="render" type="button">Render</button>
+</nav>
+<button aria-label="Fechar workstation" class="ws-close" id="closeWorkstation" type="button">×</button>
+</header>
+<div class="ws-body">
+<aside class="ws-sidebar">
+<div class="ws-panel-title">PROJECT</div>
+<button class="ws-folder active" type="button"><span>▾</span> G3nos Portfolio</button>
+<button class="ws-folder" type="button"><span>⌁</span> Compositions <b>17</b></button>
+<button class="ws-folder" type="button"><span>◫</span> Media Library <b>17</b></button>
+<button class="ws-folder" type="button"><span>✦</span> Creative Tools <b>04</b></button>
+<div class="ws-system">
+<span>RENDER ENGINE</span>
+<div><i></i> GPU Accelerated</div>
+<small>WebGL • Three.js • GLSL</small>
+</div>
+</aside>
+<main class="ws-main">
+<section class="ws-view active" data-ws-view="projects">
+<div class="ws-view-header">
+<div><small>PROJECTS / G3NOS</small><h2>Compositions</h2></div>
+<div class="ws-view-controls"><button type="button">▦</button><button type="button">☷</button></div>
+</div>
+<div class="ws-projects" id="wsProjects"></div>
+</section>
+<section class="ws-view" data-ws-view="composition">
+<div class="ws-composition">
+<div class="ws-preview">
+<div class="ws-preview-screen" id="wsPreviewScreen">
+<img alt="Preview do projeto selecionado" id="wsPreviewImage"/>
+<div class="ws-safe-frame"></div>
+<button id="wsPreviewPlay" type="button">▶</button>
+<span id="wsPreviewTime">00:00:00:00</span>
+</div>
+<div class="ws-preview-controls"><span>25%</span><button type="button">◀</button><button type="button">▶</button><button type="button">▶▶</button><span>Full</span></div>
+</div>
+<aside class="ws-inspector" id="wsInspector"></aside>
+</div>
+<div class="ws-timeline">
+<div class="ws-time-ruler"><span>00:00</span><span>00:05</span><span>00:10</span><span>00:15</span><span>00:20</span><span>00:25</span></div>
+<div class="ws-playhead" id="wsPlayhead"></div>
+<div class="ws-layer"><b>◉ VIDEO_MASTER</b><i style="--w:92%"></i></div>
+<div class="ws-layer"><b>✦ ADJUSTMENT_FX</b><i style="--w:74%"></i></div>
+<div class="ws-layer"><b>◈ COLOR_GRADE</b><i style="--w:88%"></i></div>
+<div class="ws-layer"><b>⌁ PARTICLES</b><i style="--w:58%"></i></div>
+<div class="ws-layer audio"><b>♫ AUDIO_SYNC</b><div class="ws-wave"></div></div>
+</div>
+</section>
+<section class="ws-view" data-ws-view="effects">
+<div class="ws-effects">
+<div class="ws-effect-orb"><div></div><span>GLSL<br/>CORE</span></div>
+<div class="ws-effect-list">
+<article><span>01</span><h3>Chromatic Aberration</h3><p>Separação dinâmica dos canais RGB.</p><i style="--v:76%"></i></article>
+<article><span>02</span><h3>Energy Bloom</h3><p>Realce luminoso ligado à intensidade.</p><i style="--v:88%"></i></article>
+<article><span>03</span><h3>Motion Trails</h3><p>Rastros temporais para reforçar velocidade.</p><i style="--v:64%"></i></article>
+<article><span>04</span><h3>Digital Distortion</h3><p>Glitch procedural e deslocamento de pixels.</p><i style="--v:52%"></i></article>
+</div>
+</div>
+</section>
+<section class="ws-view" data-ws-view="render">
+<div class="ws-render">
+<div class="ws-render-ring"><strong id="renderPercent">0%</strong><span>RENDERING</span></div>
+<h2>G3nos_Master_4K_FINAL.mp4</h2>
+<p>Adobe Media Encoder • H.264 • 3840×2160 • Maximum Quality</p>
+<button id="startRender" type="button">INICIAR RENDERIZAÇÃO</button>
+<div class="ws-render-log" id="renderLog"><span>Ready to render.</span></div>
+</div>
+</section>
+</main>
+<aside class="ws-rightbar">
+<div class="ws-panel-title">INFO</div>
+<div class="ws-info" id="wsInfo"></div>
+<div class="ws-panel-title">EFFECT CONTROLS</div>
+<label>Bloom <input max="100" min="0" type="range" value="72"/></label>
+<label>Glow <input max="100" min="0" type="range" value="84"/></label>
+<label>Distortion <input max="100" min="0" type="range" value="38"/></label>
+<label>Chromatic <input max="100" min="0" type="range" value="51"/></label>
+</aside>
+</div>
+<footer class="ws-statusbar">
+<span><i></i> PROJECT ONLINE</span>
+<span>17 ITEMS</span>
+<span>GPU: ACTIVE</span>
+<span id="wsClock">00:00:00</span>
+</footer>
+</div>
+</section>
+<div aria-hidden="true" class="cinematic-transition" id="cinematicTransition">
+<div class="cinematic-line"></div><div class="cinematic-title" id="cinematicTitle">EDIT 01</div>
+</div>
+<div aria-hidden="true" class="modal" id="modal">
+<div class="modal-backdrop" data-close=""></div>
+<div aria-labelledby="modalTitle" aria-modal="true" class="modal-dialog" role="dialog">
+<button aria-label="Fechar" class="modal-close" data-close="" type="button">×</button>
+<button aria-label="Edit anterior" class="modal-nav modal-prev" id="modalPrev" type="button">‹</button>
+<button aria-label="Próxima edit" class="modal-nav modal-next" id="modalNext" type="button">›</button>
+<div class="modal-video" id="modalVideo"></div>
+<div class="modal-meta">
+<div class="modal-heading">
+<small id="modalCategory">G3NOS EDITZ</small>
+<strong id="modalTitle">Ascensão</strong>
+<p id="modalDescription"></p>
+</div>
+<div class="modal-project-data">
+<span id="modalCount">01 / 17</span>
+<span id="modalDuration">00:23</span>
+<span id="modalSoftware">After Effects</span>
+<span id="modalYear">2025</span>
+</div>
+<div class="modal-tags" id="modalTags"></div>
+<a href="#" id="modalLink" rel="noopener" target="_blank">Abrir no YouTube ↗</a>
+</div>
+</div>
+</div>
+<script src="script.js"></script>
+<script src="scene.js" type="module"></script>
+</body>
+</html>
