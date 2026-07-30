@@ -40,6 +40,41 @@ if(renderer){
   const base=new THREE.Mesh(new THREE.CylinderGeometry(1.65,2,.18,48),metal);base.scale.z=.45;base.position.set(0,-2.78,-.05);monitor.add(base);
   monitor.position.set(2.5,.1,-1.2);monitor.rotation.set(-.04,-.08,0);world.add(monitor);
 
+
+  /* Procedural editing studio: no external model files required. */
+  const floorMat=new THREE.MeshStandardMaterial({color:0x08080d,metalness:.72,roughness:.2});
+  const floor=new THREE.Mesh(new THREE.PlaneGeometry(42,28),floorMat);
+  floor.rotation.x=-Math.PI/2;floor.position.set(0,-3.02,-4);world.add(floor);
+
+  const deskMat=new THREE.MeshStandardMaterial({color:0x09090d,metalness:.55,roughness:.24});
+  const desk=new THREE.Mesh(new THREE.BoxGeometry(10,.34,4.2),deskMat);
+  desk.position.set(1,-2.82,-.6);world.add(desk);
+
+  function makeSpeaker(x){
+    const g=new THREE.Group();
+    const box=new THREE.Mesh(new THREE.BoxGeometry(1.15,2.25,.95),metal);g.add(box);
+    [0.48,0.25].forEach((r,j)=>{
+      const cone=new THREE.Mesh(new THREE.CylinderGeometry(r,r*.82,.08,36),new THREE.MeshStandardMaterial({color:j?0x62e7ff:0x161620,emissive:j?0x62e7ff:0x000000,emissiveIntensity:j?.35:0,metalness:.35,roughness:.34}));
+      cone.rotation.x=Math.PI/2;cone.position.set(0,j?.55:-.35,.51);g.add(cone);
+    });
+    g.position.set(x,-1.65,-.25);world.add(g);
+  }
+  makeSpeaker(-1.05);makeSpeaker(6.05);
+
+  const keyboard=new THREE.Group();
+  const kbBase=new THREE.Mesh(new THREE.BoxGeometry(3.8,.16,1.15),metal);keyboard.add(kbBase);
+  for(let row=0;row<4;row++)for(let col=0;col<12;col++){
+    const key=new THREE.Mesh(new THREE.BoxGeometry(.24,.07,.18),new THREE.MeshStandardMaterial({color:0x171722,emissive:(row+col)%3===0?0x8b5cf6:0x12121a,emissiveIntensity:.28,roughness:.3}));
+    key.position.set(-1.55+col*.285,.12,-.35+row*.23);keyboard.add(key);
+  }
+  keyboard.position.set(1,-2.48,1);keyboard.rotation.y=-.04;world.add(keyboard);
+
+  const mouse=new THREE.Mesh(new THREE.SphereGeometry(.36,28,18,0,Math.PI*2,0,Math.PI*.56),new THREE.MeshStandardMaterial({color:0x15151e,metalness:.6,roughness:.2,emissive:0x62e7ff,emissiveIntensity:.1}));
+  mouse.scale.set(.72,.5,1.05);mouse.position.set(3.55,-2.48,1);world.add(mouse);
+
+  const ledStrip=new THREE.Mesh(new THREE.BoxGeometry(10.2,.035,.035),new THREE.MeshBasicMaterial({color:0x8b5cf6}));
+  ledStrip.position.set(1,-2.6,-2.62);world.add(ledStrip);
+
   const rings=new THREE.Group();
   [0x62e7ff,0x8b5cf6,0xff315d,0x62e7ff,0x8b5cf6].forEach((color,i)=>{
     const ring=new THREE.Mesh(new THREE.TorusGeometry(2.1+i*.55,.012+i*.002,8,160),new THREE.MeshBasicMaterial({color,transparent:true,opacity:.18-i*.018}));
@@ -76,8 +111,8 @@ if(renderer){
   const clock=new THREE.Clock();
   function animate(){
     const t=clock.getElapsedTime();scrollCurrent+=(scrollTarget-scrollCurrent)*.035;
-    camera.position.x+=(px*.85-camera.position.x)*.025;camera.position.y+=(.4+py*.55-camera.position.y)*.025;camera.position.z=13-scrollCurrent*3.2;
-    camera.lookAt(0,0,-2.5-scrollCurrent*3);
+    camera.position.x+=(px*.85-camera.position.x)*.025;camera.position.y+=(.4+py*.55-camera.position.y)*.025;camera.position.z=13-scrollCurrent*7.2; camera.position.x+=(Math.sin(scrollCurrent*Math.PI*2)*1.15-camera.position.x)*.018;
+    camera.lookAt(0,-.25,-2.5-scrollCurrent*5.2);
     world.rotation.y+=((px*.055+scrollCurrent*.42)-world.rotation.y)*.025;world.rotation.x+=((-py*.025)-world.rotation.x)*.025;
     monitor.position.y=.1+Math.sin(t*.65)*.08;monitor.rotation.y=-.08+Math.sin(t*.35)*.025;
     rings.children.forEach((r,i)=>{r.rotation.z+=r.userData.speed;r.rotation.y+=Math.sin(t*.25+i)*.0005});

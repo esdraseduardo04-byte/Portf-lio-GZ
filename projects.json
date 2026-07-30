@@ -14,7 +14,14 @@
       "COLOR"
     ],
     "accent": "#62e7ff",
-    "file": "Awakening_Protocol_FINAL_V1.aep"
+    "file": "Awakening_Protocol_FINAL_V1.aep",
+    "displayTitle": "Ascensão",
+    "description": "Uma composição focada em crescimento de poder, cortes progressivos e energia luminosa.",
+    "objective": "Transmitir evolução e poder crescente.",
+    "kind": "anime",
+    "paletteName": "Ciano elétrico",
+    "featured": true,
+    "recent": false
   },
   {
     "id": "efcKAYV2TkU",
@@ -31,7 +38,14 @@
       "GLITCH"
     ],
     "accent": "#ff315d",
-    "file": "Limitless_FINAL_V2.aep"
+    "file": "Limitless_FINAL_V2.aep",
+    "displayTitle": "Infinito",
+    "description": "Ritmo agressivo, contrastes intensos e impacto sincronizado com a trilha.",
+    "objective": "Criar impacto imediato através do ritmo.",
+    "kind": "anime",
+    "paletteName": "Vermelho neon",
+    "featured": true,
+    "recent": false
   },
   {
     "id": "WgfzsT_FNdU",
@@ -48,7 +62,14 @@
       "SHAKE"
     ],
     "accent": "#f59e0b",
-    "file": "Fallen_Kingdom_FINAL_V3.aep"
+    "file": "Fallen_Kingdom_FINAL_V3.aep",
+    "displayTitle": "Reino em Queda",
+    "description": "Atmosfera dramática construída com camadas, pausas e tensão cinematográfica.",
+    "objective": "Construir uma atmosfera emocional e imersiva.",
+    "kind": "anime",
+    "paletteName": "Âmbar",
+    "featured": true,
+    "recent": false
   },
   {
     "id": "5hD0dbfG0KQ",
@@ -65,7 +86,14 @@
       "GLOW"
     ],
     "accent": "#49e2a7",
-    "file": "Crimson_Pulse_FINAL_V4.aep"
+    "file": "Crimson_Pulse_FINAL_V4.aep",
+    "displayTitle": "Pulso Carmesim",
+    "description": "Cortes rápidos, glow e aceleração visual para transmitir intensidade crescente.",
+    "objective": "Conduzir o olhar com movimento e contraste.",
+    "kind": "anime",
+    "paletteName": "Verde energia",
+    "featured": true,
+    "recent": false
   },
   {
     "id": "QMFi8eKfy80",
@@ -82,7 +110,14 @@
       "COLOR"
     ],
     "accent": "#8b5cf6",
-    "file": "Beyond_the_Frame_FINAL_V5.aep"
+    "file": "Beyond_the_Frame_FINAL_V5.aep",
+    "displayTitle": "Além do Frame",
+    "description": "Transições contínuas e movimento de câmera conectando cada momento da narrativa.",
+    "objective": "Transmitir evolução e poder crescente.",
+    "kind": "anime",
+    "paletteName": "Violeta",
+    "featured": true,
+    "recent": false
   },
   {
     "id": "wlF-JE-bYCk",
@@ -99,7 +134,14 @@
       "GLITCH"
     ],
     "accent": "#62e7ff",
-    "file": "Shadow_Requiem_FINAL_V6.aep"
+    "file": "Shadow_Requiem_FINAL_V6.aep",
+    "displayTitle": "Réquiem das Sombras",
+    "description": "Uma composição sombria guiada por música, profundidade e contraste.",
+    "objective": "Criar impacto imediato através do ritmo.",
+    "kind": "anime",
+    "paletteName": "Ciano elétrico",
+    "featured": true,
+    "recent": false
   },
   {
     "id": "J38rMJNGTPY",
@@ -116,7 +158,14 @@
       "SHAKE"
     ],
     "accent": "#ff315d",
-    "file": "Final_Resolve_FINAL_V7.aep"
+    "file": "Final_Resolve_FINAL_V7.aep",
+    "displayTitle": "Determinação Final",
+    "description": "Clímax, tensão e sincronização precisa em uma estrutura de impacto.",
+    "objective": "Construir uma atmosfera emocional e imersiva.",
+    "kind": "anime",
+    "paletteName": "Vermelho neon",
+    "featured": false,
+    "recent": false
   },
   {
     "id": "-ZbRzfAF3ws",
@@ -133,7 +182,14 @@
       "GLOW"
     ],
     "accent": "#f59e0b",
-    "file": "Neon_Memory_FINAL_V8.aep"
+    "file": "Neon_Memory_FINAL_V8.aep",
+    "displayTitle": "Memória Neon",
+    "description": "Cor vibrante, velocidade e distorção digital em uma estética futurista.",
+    "objective": "Conduzir o olhar com movimento e contraste.",
+    "kind": "anime",
+    "paletteName": "Âmbar",
+    "featured": false,
+    "recent": false
   },
   {
     "id": "OYmjtbdIAF8",
@@ -150,7 +206,14 @@
       "COLOR"
     ],
     "accent": "#49e2a7",
-    "file": "Unbreakable_FINAL_V9.aep"
+    "file": "Unbreakable_FINAL_V9.aep",
+    "displayTitle": "Inquebrável",
+    "description": "Uma narrativa visual sobre força, transformação e superação.",
+    "objective": "Transmitir evolução e poder crescente.",
+    "kind": "anime",
+    "paletteName": "Verde energia",
+    "featured": false,
+    "recent": false
   },
   {
     "id": "0vd1HhMuG9w",
@@ -167,7 +230,14 @@
       "GLITCH"
     ],
     "accent": "#8b5cf6",
-    "file": "Chaos_Theory_FINAL_V10.aep"
+    "file": "Chaos_Theory_FINAL_V10.aep",
+    "displayTitle": "Teoria do Caos",
+    "description": "Glitch, shakes e energia imprevisível organizados pelo ritmo.",
+    "objective": "Criar impacto imediato através do ritmo.",
+    "kind": "anime",
+    "paletteName": "Violeta",
+    "featured": false,
+    "recent": false
   },
   {
     "id": "O1Q-cv9F9iM",
@@ -184,7 +254,14 @@
       "SHAKE"
     ],
     "accent": "#62e7ff",
-    "file": "Last_Horizon_FINAL_V11.aep"
+    "file": "Last_Horizon_FINAL_V11.aep",
+    "displayTitle": "Último Horizonte",
+    "description": "Escala épica, cor cinematográfica e sensação de encerramento.",
+    "objective": "Construir uma atmosfera emocional e imersiva.",
+    "kind": "anime",
+    "paletteName": "Ciano elétrico",
+    "featured": false,
+    "recent": true
   },
   {
     "id": "7UY6gU4TFIg",
@@ -201,7 +278,14 @@
       "GLOW"
     ],
     "accent": "#ff315d",
-    "file": "Silent_Rage_FINAL_V12.aep"
+    "file": "Silent_Rage_FINAL_V12.aep",
+    "displayTitle": "Fúria Silenciosa",
+    "description": "Contraste entre silêncio, tensão e explosões de movimento.",
+    "objective": "Conduzir o olhar com movimento e contraste.",
+    "kind": "anime",
+    "paletteName": "Vermelho neon",
+    "featured": false,
+    "recent": true
   },
   {
     "id": "fS4uOKkMqPE",
@@ -218,7 +302,14 @@
       "COLOR"
     ],
     "accent": "#f59e0b",
-    "file": "Redline_FINAL_V13.aep"
+    "file": "Redline_FINAL_V13.aep",
+    "displayTitle": "Linha Vermelha",
+    "description": "Velocidade, motion blur e edição de alta intensidade.",
+    "objective": "Transmitir evolução e poder crescente.",
+    "kind": "cinematic",
+    "paletteName": "Âmbar",
+    "featured": false,
+    "recent": true
   },
   {
     "id": "_896l21-Id0",
@@ -235,7 +326,14 @@
       "GLITCH"
     ],
     "accent": "#49e2a7",
-    "file": "Lost_Signal_FINAL_V14.aep"
+    "file": "Lost_Signal_FINAL_V14.aep",
+    "displayTitle": "Sinal Perdido",
+    "description": "Ruído, scanlines e deslocamentos digitais como linguagem visual.",
+    "objective": "Criar impacto imediato através do ritmo.",
+    "kind": "cinematic",
+    "paletteName": "Verde energia",
+    "featured": false,
+    "recent": true
   },
   {
     "id": "AsMrSA5xBNM",
@@ -252,7 +350,14 @@
       "SHAKE"
     ],
     "accent": "#8b5cf6",
-    "file": "Eclipse_FINAL_V15.aep"
+    "file": "Eclipse_FINAL_V15.aep",
+    "displayTitle": "Eclipse",
+    "description": "Luz e sombra equilibradas em uma composição atmosférica.",
+    "objective": "Construir uma atmosfera emocional e imersiva.",
+    "kind": "cinematic",
+    "paletteName": "Violeta",
+    "featured": false,
+    "recent": true
   },
   {
     "id": "hYoBa3BQjNY",
@@ -269,7 +374,14 @@
       "GLOW"
     ],
     "accent": "#62e7ff",
-    "file": "Afterimage_FINAL_V16.aep"
+    "file": "Afterimage_FINAL_V16.aep",
+    "displayTitle": "Pós-imagem",
+    "description": "Trails, movimento residual e sincronização para reforçar velocidade.",
+    "objective": "Conduzir o olhar com movimento e contraste.",
+    "kind": "cinematic",
+    "paletteName": "Ciano elétrico",
+    "featured": false,
+    "recent": true
   },
   {
     "id": "SBSTOTKcIAo",
@@ -286,6 +398,13 @@
       "COLOR"
     ],
     "accent": "#ff315d",
-    "file": "The_Final_Cut_FINAL_V17.aep"
+    "file": "The_Final_Cut_FINAL_V17.aep",
+    "displayTitle": "O Corte Final",
+    "description": "Uma síntese da identidade G3nos: ritmo, composição, cor e impacto.",
+    "objective": "Transmitir evolução e poder crescente.",
+    "kind": "cinematic",
+    "paletteName": "Vermelho neon",
+    "featured": false,
+    "recent": true
   }
 ]

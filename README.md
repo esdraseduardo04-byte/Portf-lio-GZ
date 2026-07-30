@@ -1,27 +1,20 @@
-# G3nos Editz — Creative Workstation AAA
+# G3nos Editz — AAA Final
 
-## Nova experiência
-- Workstation inspirada em After Effects
-- 17 arquivos `.aep` interativos
-- Projects, Composition, Effects e Render
-- Timeline animada com layers e waveform
-- Ficha técnica completa para cada projeto
-- Nomes cinematográficos como fallback
-- Tentativa automática de carregar o título real do YouTube via oEmbed
-- Preview integrado ao modal existente
-- Renderização simulada
-- Interface responsiva
+Versão consolidada e corrigida.
 
-## Personalização
-Edite `projects.json` e o array `PROJECTS` no final de `script.js` para alterar:
-- nome
-- descrição
-- categoria
-- duração
-- ano
-- software
-- tags
-- cor própria
+## Principais mudanças
+- Uma única fonte de dados controla galeria, carrossel, modal e workstation.
+- Remoção definitiva de “Edit 01”, “Edit 02” e nomes genéricos.
+- Título real do YouTube é carregado quando disponível; nomes autorais funcionam como fallback.
+- 17 fichas técnicas com descrição, objetivo, duração, software, ano, tags e paleta.
+- Modal muda de cor de acordo com o projeto.
+- Preview silencioso ao passar o mouse em computadores.
+- Workstation sincronizada com os mesmos projetos.
+- Números decorativos e informações enganosas foram removidos.
+- Estúdio WebGL ampliado com piso, mesa, teclado, mouse, caixas de som e LEDs procedurais.
+- Câmera com deslocamento cinematográfico ligado ao scroll.
+- Melhorias de acessibilidade, desempenho e responsividade.
 
-## Publicação
-Envie todos os arquivos para o mesmo repositório do GitHub Pages.
+## Publicação no GitHub Pages
+Extraia o ZIP e envie o conteúdo para a raiz do repositório, substituindo os arquivos existentes.
+Não envie o ZIP fechado.

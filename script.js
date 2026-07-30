@@ -303,3 +303,228 @@ renderWsProjects();selectProject(0);hydrateYouTubeTitles();
 document.addEventListener('keydown',e=>{
   if(e.key==='Escape'&&workstation.classList.contains('open'))document.getElementById('closeWorkstation').click();
 });
+
+/* ==========================================================
+   G3NOS AAA FINAL — canonical project system
+   One data source powers gallery, ring, modal and workstation.
+   ========================================================== */
+const G3NOS_PROJECTS = [{"id": "xu1q9g6cG6Q", "title": "Awakening Protocol", "subtitle": "Ascensão, energia e impacto visual.", "category": "Anime Edit", "year": "2025", "duration": "00:23", "software": "After Effects", "tags": ["SYNC", "VFX", "MOTION", "COLOR"], "accent": "#62e7ff", "file": "Awakening_Protocol_FINAL_V1.aep", "displayTitle": "Ascensão", "description": "Uma composição focada em crescimento de poder, cortes progressivos e energia luminosa.", "objective": "Transmitir evolução e poder crescente.", "kind": "anime", "paletteName": "Ciano elétrico", "featured": true, "recent": false}, {"id": "efcKAYV2TkU", "title": "Limitless", "subtitle": "Ritmo agressivo e composição de alto contraste.", "category": "Anime Edit", "year": "2025", "duration": "00:26", "software": "After Effects", "tags": ["SYNC", "VFX", "MOTION", "GLITCH"], "accent": "#ff315d", "file": "Limitless_FINAL_V2.aep", "displayTitle": "Infinito", "description": "Ritmo agressivo, contrastes intensos e impacto sincronizado com a trilha.", "objective": "Criar impacto imediato através do ritmo.", "kind": "anime", "paletteName": "Vermelho neon", "featured": true, "recent": false}, {"id": "WgfzsT_FNdU", "title": "Fallen Kingdom", "subtitle": "Atmosfera dramática construída em camadas.", "category": "Anime Edit", "year": "2025", "duration": "00:29", "software": "After Effects", "tags": ["SYNC", "VFX", "MOTION", "SHAKE"], "accent": "#f59e0b", "file": "Fallen_Kingdom_FINAL_V3.aep", "displayTitle": "Reino em Queda", "description": "Atmosfera dramática construída com camadas, pausas e tensão cinematográfica.", "objective": "Construir uma atmosfera emocional e imersiva.", "kind": "anime", "paletteName": "Âmbar", "featured": true, "recent": false}, {"id": "5hD0dbfG0KQ", "title": "Crimson Pulse", "subtitle": "Cortes rápidos, glow e intensidade crescente.", "category": "Anime Edit", "year": "2025", "duration": "00:32", "software": "After Effects", "tags": ["SYNC", "VFX", "MOTION", "GLOW"], "accent": "#49e2a7", "file": "Crimson_Pulse_FINAL_V4.aep", "displayTitle": "Pulso Carmesim", "description": "Cortes rápidos, glow e aceleração visual para transmitir intensidade crescente.", "objective": "Conduzir o olhar com movimento e contraste.", "kind": "anime", "paletteName": "Verde energia", "featured": true, "recent": false}, {"id": "QMFi8eKfy80", "title": "Beyond the Frame", "subtitle": "Transições cinematográficas e movimento contínuo.", "category": "Anime Edit", "year": "2025", "duration": "00:35", "software": "After Effects", "tags": ["SYNC", "VFX", "MOTION", "COLOR"], "accent": "#8b5cf6", "file": "Beyond_the_Frame_FINAL_V5.aep", "displayTitle": "Além do Frame", "description": "Transições contínuas e movimento de câmera conectando cada momento da narrativa.", "objective": "Transmitir evolução e poder crescente.", "kind": "anime", "paletteName": "Violeta", "featured": true, "recent": false}, {"id": "wlF-JE-bYCk", "title": "Shadow Requiem", "subtitle": "Uma composição sombria guiada pela trilha.", "category": "Anime Edit", "year": "2025", "duration": "00:38", "software": "After Effects", "tags": ["SYNC", "VFX", "MOTION", "GLITCH"], "accent": "#62e7ff", "file": "Shadow_Requiem_FINAL_V6.aep", "displayTitle": "Réquiem das Sombras", "description": "Uma composição sombria guiada por música, profundidade e contraste.", "objective": "Criar impacto imediato através do ritmo.", "kind": "anime", "paletteName": "Ciano elétrico", "featured": true, "recent": false}, {"id": "J38rMJNGTPY", "title": "Final Resolve", "subtitle": "Clímax, tensão e sincronização precisa.", "category": "Anime Edit", "year": "2025", "duration": "00:41", "software": "After Effects", "tags": ["SYNC", "VFX", "MOTION", "SHAKE"], "accent": "#ff315d", "file": "Final_Resolve_FINAL_V7.aep", "displayTitle": "Determinação Final", "description": "Clímax, tensão e sincronização precisa em uma estrutura de impacto.", "objective": "Construir uma atmosfera emocional e imersiva.", "kind": "anime", "paletteName": "Vermelho neon", "featured": false, "recent": false}, {"id": "-ZbRzfAF3ws", "title": "Neon Memory", "subtitle": "Cor, velocidade e distorção digital.", "category": "Anime Edit", "year": "2025", "duration": "00:44", "software": "After Effects", "tags": ["SYNC", "VFX", "MOTION", "GLOW"], "accent": "#f59e0b", "file": "Neon_Memory_FINAL_V8.aep", "displayTitle": "Memória Neon", "description": "Cor vibrante, velocidade e distorção digital em uma estética futurista.", "objective": "Conduzir o olhar com movimento e contraste.", "kind": "anime", "paletteName": "Âmbar", "featured": false, "recent": false}, {"id": "OYmjtbdIAF8", "title": "Unbreakable", "subtitle": "Uma narrativa de força e transformação.", "category": "Anime Edit", "year": "2025", "duration": "00:47", "software": "After Effects", "tags": ["SYNC", "VFX", "MOTION", "COLOR"], "accent": "#49e2a7", "file": "Unbreakable_FINAL_V9.aep", "displayTitle": "Inquebrável", "description": "Uma narrativa visual sobre força, transformação e superação.", "objective": "Transmitir evolução e poder crescente.", "kind": "anime", "paletteName": "Verde energia", "featured": false, "recent": false}, {"id": "0vd1HhMuG9w", "title": "Chaos Theory", "subtitle": "Glitch, impacto e energia imprevisível.", "category": "Anime Edit", "year": "2025", "duration": "00:50", "software": "After Effects", "tags": ["SYNC", "VFX", "MOTION", "GLITCH"], "accent": "#8b5cf6", "file": "Chaos_Theory_FINAL_V10.aep", "displayTitle": "Teoria do Caos", "description": "Glitch, shakes e energia imprevisível organizados pelo ritmo.", "objective": "Criar impacto imediato através do ritmo.", "kind": "anime", "paletteName": "Violeta", "featured": false, "recent": false}, {"id": "O1Q-cv9F9iM", "title": "Last Horizon", "subtitle": "Escala épica e acabamento cinematográfico.", "category": "Anime Edit", "year": "2025", "duration": "00:53", "software": "After Effects", "tags": ["SYNC", "VFX", "MOTION", "SHAKE"], "accent": "#62e7ff", "file": "Last_Horizon_FINAL_V11.aep", "displayTitle": "Último Horizonte", "description": "Escala épica, cor cinematográfica e sensação de encerramento.", "objective": "Construir uma atmosfera emocional e imersiva.", "kind": "anime", "paletteName": "Ciano elétrico", "featured": false, "recent": true}, {"id": "7UY6gU4TFIg", "title": "Silent Rage", "subtitle": "Contraste entre silêncio, tensão e explosão.", "category": "Anime Edit", "year": "2025", "duration": "00:56", "software": "After Effects", "tags": ["SYNC", "VFX", "MOTION", "GLOW"], "accent": "#ff315d", "file": "Silent_Rage_FINAL_V12.aep", "displayTitle": "Fúria Silenciosa", "description": "Contraste entre silêncio, tensão e explosões de movimento.", "objective": "Conduzir o olhar com movimento e contraste.", "kind": "anime", "paletteName": "Vermelho neon", "featured": false, "recent": true}, {"id": "fS4uOKkMqPE", "title": "Redline", "subtitle": "Velocidade, shakes e edição de alta intensidade.", "category": "Cinematic Edit", "year": "2025", "duration": "00:20", "software": "After Effects", "tags": ["SYNC", "VFX", "MOTION", "COLOR"], "accent": "#f59e0b", "file": "Redline_FINAL_V13.aep", "displayTitle": "Linha Vermelha", "description": "Velocidade, motion blur e edição de alta intensidade.", "objective": "Transmitir evolução e poder crescente.", "kind": "cinematic", "paletteName": "Âmbar", "featured": false, "recent": true}, {"id": "_896l21-Id0", "title": "Lost Signal", "subtitle": "Ruído, scanlines e estética tecnológica.", "category": "Cinematic Edit", "year": "2025", "duration": "00:23", "software": "After Effects", "tags": ["SYNC", "VFX", "MOTION", "GLITCH"], "accent": "#49e2a7", "file": "Lost_Signal_FINAL_V14.aep", "displayTitle": "Sinal Perdido", "description": "Ruído, scanlines e deslocamentos digitais como linguagem visual.", "objective": "Criar impacto imediato através do ritmo.", "kind": "cinematic", "paletteName": "Verde energia", "featured": false, "recent": true}, {"id": "AsMrSA5xBNM", "title": "Eclipse", "subtitle": "Luz e sombra em uma composição atmosférica.", "category": "Cinematic Edit", "year": "2025", "duration": "00:26", "software": "After Effects", "tags": ["SYNC", "VFX", "MOTION", "SHAKE"], "accent": "#8b5cf6", "file": "Eclipse_FINAL_V15.aep", "displayTitle": "Eclipse", "description": "Luz e sombra equilibradas em uma composição atmosférica.", "objective": "Construir uma atmosfera emocional e imersiva.", "kind": "cinematic", "paletteName": "Violeta", "featured": false, "recent": true}, {"id": "hYoBa3BQjNY", "title": "Afterimage", "subtitle": "Movimento residual, trails e sincronização.", "category": "Cinematic Edit", "year": "2025", "duration": "00:29", "software": "After Effects", "tags": ["SYNC", "VFX", "MOTION", "GLOW"], "accent": "#62e7ff", "file": "Afterimage_FINAL_V16.aep", "displayTitle": "Pós-imagem", "description": "Trails, movimento residual e sincronização para reforçar velocidade.", "objective": "Conduzir o olhar com movimento e contraste.", "kind": "cinematic", "paletteName": "Ciano elétrico", "featured": false, "recent": true}, {"id": "SBSTOTKcIAo", "title": "The Final Cut", "subtitle": "Uma síntese da identidade visual G3nos.", "category": "Cinematic Edit", "year": "2025", "duration": "00:32", "software": "After Effects", "tags": ["SYNC", "VFX", "MOTION", "COLOR"], "accent": "#ff315d", "file": "The_Final_Cut_FINAL_V17.aep", "displayTitle": "O Corte Final", "description": "Uma síntese da identidade G3nos: ritmo, composição, cor e impacto.", "objective": "Transmitir evolução e poder crescente.", "kind": "cinematic", "paletteName": "Vermelho neon", "featured": false, "recent": true}];
+const PROJECT_COUNT = G3NOS_PROJECTS.length;
+let hoverPreviewTimer = 0;
+let hoverPreviewCard = null;
+
+function projectName(project) {
+  return project.youtubeTitle || project.displayTitle || project.title;
+}
+
+function thumbnail(project, quality='hqdefault') {
+  return `https://i.ytimg.com/vi/${project.id}/${quality}.jpg`;
+}
+
+function applyProjectTheme(project) {
+  document.documentElement.style.setProperty('--project-accent', project.accent);
+  document.documentElement.style.setProperty('--ws-accent', project.accent);
+  document.body.dataset.projectTheme = project.kind;
+}
+
+function renderCanonicalRing() {
+  const target = document.getElementById('ring');
+  if (!target) return;
+  target.innerHTML = G3NOS_PROJECTS.map((p,i)=>`
+    <button class="ring-card" type="button" data-index="${i}" style="--index:${i};--project-accent:${p.accent}" aria-label="Abrir ${projectName(p)}">
+      <img src="${thumbnail(p)}" alt="" loading="lazy">
+      <span>${String(i+1).padStart(2,'0')}</span>
+      <strong>${projectName(p)}</strong>
+    </button>`).join('');
+  target.querySelectorAll('.ring-card').forEach(card => {
+    card.addEventListener('click', e => {
+      if (typeof moved !== 'undefined' && moved) { e.preventDefault(); return; }
+      openVideo(Number(card.dataset.index));
+    });
+    card.addEventListener('mouseenter',()=>cursorRing?.classList.add('play'));
+    card.addEventListener('mouseleave',()=>cursorRing?.classList.remove('play'));
+  });
+}
+
+function cardMarkup(p, i) {
+  const classes = ['project-card','reveal',p.featured?'featured':'',p.recent?'recent':'',p.kind].filter(Boolean).join(' ');
+  return `
+    <article class="${classes}" data-video="${p.id}" data-index="${i}" style="--project-accent:${p.accent}">
+      <button class="project-open" type="button" aria-label="Assistir ${projectName(p)}">
+        <div class="project-media">
+          <img src="${thumbnail(p)}" data-fallback="${thumbnail(p,'mqdefault')}" alt="Thumbnail de ${projectName(p)}" loading="lazy">
+          <div class="project-preview-slot" aria-hidden="true"></div>
+          <span class="project-number">${String(i+1).padStart(2,'0')}</span>
+          <span class="project-play">▶ <b>PREVIEW</b></span>
+          <div class="project-scanlines"></div>
+        </div>
+        <div class="project-info">
+          <div class="project-kicker"><span>${p.category}</span><i>${p.year}</i></div>
+          <h3>${projectName(p)}</h3>
+          <p>${p.description}</p>
+          <div class="project-tech">
+            <span>${p.duration}</span><span>${p.software}</span><span>${p.paletteName}</span>
+          </div>
+          <div class="project-tag-row">${p.tags.map(tag=>`<i>${tag}</i>`).join('')}</div>
+          <span class="project-arrow">↗</span>
+        </div>
+      </button>
+    </article>`;
+}
+
+function attachCardBehavior(card) {
+  const index = Number(card.dataset.index);
+  const button = card.querySelector('.project-open');
+  button?.addEventListener('click',()=>openVideo(index));
+  card.addEventListener('pointermove', e => {
+    const r=card.getBoundingClientRect();
+    card.style.setProperty('--mx',`${e.clientX-r.left}px`);
+    card.style.setProperty('--my',`${e.clientY-r.top}px`);
+    if (!reducedMotion && matchMedia('(pointer:fine)').matches) {
+      const x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+      card.style.transform=`perspective(950px) rotateX(${-y*5}deg) rotateY(${x*6}deg) translateY(-5px)`;
+    }
+  });
+  card.addEventListener('pointerenter',()=>{
+    cursorRing?.classList.add('hover','play');
+    clearTimeout(hoverPreviewTimer);
+    hoverPreviewTimer=setTimeout(()=>startHoverPreview(card,index),650);
+  });
+  card.addEventListener('pointerleave',()=>{
+    cursorRing?.classList.remove('hover','play');
+    card.style.transform='';
+    clearTimeout(hoverPreviewTimer);
+    stopHoverPreview(card);
+  });
+}
+
+function renderCanonicalGallery() {
+  const target=document.getElementById('projectGrid') || document.querySelector('.project-grid');
+  if(!target)return;
+  target.innerHTML=G3NOS_PROJECTS.map(cardMarkup).join('');
+  target.querySelectorAll('.project-card').forEach(attachCardBehavior);
+  document.querySelectorAll('.reveal').forEach(el=>{
+    if(!el.classList.contains('visible')) observer.observe(el);
+  });
+}
+
+function startHoverPreview(card,index) {
+  if (!matchMedia('(pointer:fine)').matches || document.hidden || reducedMotion) return;
+  if (hoverPreviewCard && hoverPreviewCard !== card) stopHoverPreview(hoverPreviewCard);
+  const slot=card.querySelector('.project-preview-slot');
+  if(!slot || slot.childElementCount)return;
+  const p=G3NOS_PROJECTS[index];
+  const iframe=document.createElement('iframe');
+  iframe.title=`Prévia silenciosa de ${projectName(p)}`;
+  iframe.src=`https://www.youtube-nocookie.com/embed/${p.id}?autoplay=1&mute=1&controls=0&loop=1&playlist=${p.id}&modestbranding=1&rel=0`;
+  iframe.allow='autoplay; encrypted-media';
+  iframe.referrerPolicy='strict-origin-when-cross-origin';
+  slot.appendChild(iframe);
+  card.classList.add('previewing');
+  hoverPreviewCard=card;
+}
+
+function stopHoverPreview(card) {
+  const slot=card?.querySelector('.project-preview-slot');
+  if(slot)slot.innerHTML='';
+  card?.classList.remove('previewing');
+  if(hoverPreviewCard===card)hoverPreviewCard=null;
+}
+
+function fillCanonicalModal(index) {
+  const p=G3NOS_PROJECTS[index];
+  if(!p)return;
+  const number=String(index+1).padStart(2,'0');
+  const title=document.getElementById('modalTitle');
+  const category=document.getElementById('modalCategory');
+  const description=document.getElementById('modalDescription');
+  const count=document.getElementById('modalCount');
+  const duration=document.getElementById('modalDuration');
+  const software=document.getElementById('modalSoftware');
+  const year=document.getElementById('modalYear');
+  const tags=document.getElementById('modalTags');
+  if(title)title.textContent=projectName(p);
+  if(category)category.textContent=p.category.toUpperCase();
+  if(description)description.textContent=p.description;
+  if(count)count.textContent=`${number} / ${PROJECT_COUNT}`;
+  if(duration)duration.textContent=p.duration;
+  if(software)software.textContent=p.software;
+  if(year)year.textContent=p.year;
+  if(tags)tags.innerHTML=p.tags.map(t=>`<i>${t}</i>`).join('');
+  const link=document.getElementById('modalLink');
+  if(link)link.href=`https://www.youtube.com/watch?v=${p.id}`;
+  const dialog=document.querySelector('.modal-dialog');
+  if(dialog)dialog.style.setProperty('--project-accent',p.accent);
+  applyProjectTheme(p);
+}
+
+const canonicalBaseOpen = typeof baseOpenVideo === 'function' ? baseOpenVideo : openVideo;
+openVideo = function(index) {
+  const safe=(index+PROJECT_COUNT)%PROJECT_COUNT;
+  const p=G3NOS_PROJECTS[safe];
+  stopHoverPreview(hoverPreviewCard);
+  if(cinematicTitle) cinematicTitle.textContent=projectName(p).toUpperCase();
+  if(cinematicTransition) cinematicTransition.style.setProperty('--project-accent',p.accent);
+  if(cinematicTransition) cinematicTransition.classList.add('active');
+  setTimeout(()=>{
+    canonicalBaseOpen(safe);
+    fillCanonicalModal(safe);
+    if(cinematicTransition)cinematicTransition.classList.remove('active');
+  }, reducedMotion ? 0 : 520);
+};
+
+function syncWorkstationProject(index, openComposition=false) {
+  selectedProject=index;
+  const p=G3NOS_PROJECTS[index];
+  document.querySelectorAll('.ws-project').forEach((el,i)=>el.classList.toggle('active',i===index));
+  if(wsPreviewImage) {
+    wsPreviewImage.src=thumbnail(p,'maxresdefault');
+    wsPreviewImage.onerror=()=>{wsPreviewImage.src=thumbnail(p)};
+  }
+  if(wsInfo) wsInfo.innerHTML=`<h3>${projectName(p)}</h3><p>${p.description}</p><div><span>OBJETIVO</span><b>${p.objective}</b></div><div><span>DURAÇÃO</span><b>${p.duration}</b></div><div><span>SOFTWARE</span><b>${p.software}</b></div><div><span>ANO</span><b>${p.year}</b></div>`;
+  if(wsInspector) wsInspector.innerHTML=`<small>${p.category.toUpperCase()}</small><h3>${projectName(p)}</h3><p>${p.description}</p><div class="ws-meta-grid"><div><span>DURAÇÃO</span><strong>${p.duration}</strong></div><div><span>ANO</span><strong>${p.year}</strong></div><div><span>SOFTWARE</span><strong>${p.software}</strong></div><div><span>PALETA</span><strong>${p.paletteName}</strong></div></div><div class="ws-tags">${p.tags.map(t=>`<i>${t}</i>`).join('')}</div>`;
+  applyProjectTheme(p);
+  if(openComposition)activateWsTab('composition');
+}
+
+renderWsProjects = function() {
+  if(!wsProjects)return;
+  wsProjects.innerHTML=G3NOS_PROJECTS.map((p,i)=>`
+    <article class="ws-project ${i===selectedProject?'active':''}" data-ws-project="${i}" style="--project-accent:${p.accent}">
+      <img src="${thumbnail(p)}" alt="">
+      <div class="ws-project-body"><strong class="ws-project-name">${projectName(p)}</strong><span>${p.file}</span></div>
+    </article>`).join('');
+  wsProjects.querySelectorAll('.ws-project').forEach(card=>card.addEventListener('click',()=>syncWorkstationProject(Number(card.dataset.wsProject),true)));
+};
+selectProject = syncWorkstationProject;
+
+async function hydrateCanonicalTitles() {
+  const tasks=G3NOS_PROJECTS.map(async(p,i)=>{
+    try {
+      const response=await fetch(`https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${p.id}&format=json`);
+      if(!response.ok)return;
+      const data=await response.json();
+      const cleaned=cleanYouTubeTitle(data.title||'');
+      if(cleaned && !/^edit\s*\d*$/i.test(cleaned)) {
+        p.youtubeTitle=cleaned;
+        PROJECTS[i].youtubeTitle=cleaned;
+      }
+    } catch(_error) {}
+  });
+  await Promise.allSettled(tasks);
+  renderCanonicalRing();
+  renderCanonicalGallery();
+  renderWsProjects();
+  syncWorkstationProject(selectedProject);
+  if(document.getElementById('modal')?.classList.contains('open'))fillCanonicalModal(activeIndex);
+}
+
+renderCanonicalRing();
+renderCanonicalGallery();
+renderWsProjects();
+syncWorkstationProject(0);
+hydrateCanonicalTitles();
+
+document.addEventListener('visibilitychange',()=>{
+  if(document.hidden) stopHoverPreview(hoverPreviewCard);
+});

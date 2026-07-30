@@ -1,722 +1,340 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Portfólio 3D de G3nos Editz, editor de vídeo especializado em anime edits, motion e conteúdo curto.">
-  <meta name="theme-color" content="#07070b">
-  <title>G3nos Editz — Editor & Motion</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Portfólio imersivo de G3nos Editz: 17 projetos de anime edit, motion, VFX e edição cinematográfica apresentados em uma workstation 3D." name="description"/>
+<meta content="#07070b" name="theme-color"/>
+<title>G3nos Editz — Portfólio Imersivo de Edição e Motion</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
 </head>
 <body>
-  <canvas id="webglScene" aria-hidden="true"></canvas>
-  <canvas id="space" aria-hidden="true"></canvas>
-  <div class="boot-screen" id="bootScreen">
-    <div class="boot-logo"><strong>G3NOS</strong><span>EDITZ</span></div>
-    <div class="boot-copy">INICIALIZANDO EXPERIÊNCIA 3D</div>
-    <div class="boot-track"><i id="bootBar"></i></div>
-    <small id="bootPercent">0%</small>
-  </div>
-  <div class="grain" aria-hidden="true"></div>
-  <div class="progress" id="progress"></div>
-  <div class="cursor-dot" id="cursorDot"></div>
-  <div class="cursor-ring" id="cursorRing"><span>PLAY</span></div>
-
-  <header class="header">
-    <a class="brand magnetic" href="#inicio" aria-label="Ir para o início">
-      <strong>G3NOS</strong><span>EDITZ</span><i>シ</i>
-    </a>
-    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu" aria-expanded="false">
-      <span></span><span></span>
-    </button>
-    <nav class="nav" id="nav">
-      <a href="#sobre">Sobre</a>
-      <a href="#portfolio">Trabalhos</a>
-      <a href="#servicos">Serviços</a>
-      <a class="nav-cta magnetic" href="#contato">Criar projeto</a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="hero" id="inicio">
-      <div class="scene-hud" aria-hidden="true">
-        <span class="hud-status"><i></i> WEBGL EXPERIENCE</span>
-        <span class="hud-coordinates" id="hudCoordinates">X 000 / Y 000</span>
-      </div>
-      <div class="hero-copy reveal">
-        <p class="eyebrow"><span></span> EDITOR • MOTION • ANIME</p>
-        <h1>Eu transformo<br>cenas em <em>impacto.</em></h1>
-        <p class="hero-lead">Edits construídas com ritmo, composição e energia visual. Uma experiência criada para ser sentida, não apenas assistida.</p>
-        <div class="hero-actions">
-          <button class="btn btn-primary magnetic" type="button" data-open-index="0">Assistir destaque <b>▶</b></button>
-          <a class="btn btn-ghost magnetic" href="#portfolio">Explorar trabalhos <b>↓</b></a>
-          <button class="btn btn-software magnetic" id="openWorkstation" type="button">Abrir workstation <b>⌘</b></button>
-        </div>
-        <div class="hero-metrics">
-          <div><strong>2020</strong><span>início da jornada</span></div>
-          <div><strong>17</strong><span>edits selecionadas</span></div>
-          <div><strong>300+</strong><span>vídeos publicados</span></div>
-        </div>
-      </div>
-
-      <div class="studio reveal" id="studio">
-        <div class="studio-grid"></div>
-        <div class="studio-halo halo-a"></div>
-        <div class="studio-halo halo-b"></div>
-
-        <div class="screen-rig" id="screenRig">
-          <div class="screen-shell">
-            <div class="screen">
-              <img src="https://i.ytimg.com/vi/xu1q9g6cG6Q/maxresdefault.jpg"
-                   data-fallback="https://i.ytimg.com/vi/xu1q9g6cG6Q/hqdefault.jpg"
-                   alt="Edit em destaque">
-              <div class="screen-overlay"></div>
-              <div class="screen-scan"></div>
-              <div class="screen-ui">
-                <span>PREVIEW / 01</span>
-                <span>00:00:17</span>
-              </div>
-              <button class="screen-button" type="button" data-open-index="0" aria-label="Assistir edit em destaque">▶</button>
-            </div>
-          </div>
-          <div class="screen-arm"></div>
-          <div class="screen-foot"></div>
-        </div>
-
-        <div class="layer layer-video">
-          <span>VIDEO 01</span><i></i><i></i><i></i><i></i><i></i>
-        </div>
-        <div class="layer layer-fx">
-          <span>ADJUSTMENT</span><i></i><i></i><i></i>
-        </div>
-        <div class="layer layer-audio">
-          <span>AUDIO</span>
-          <div class="wave"><i style="--h:20%"></i><i style="--h:37%"></i><i style="--h:54%"></i><i style="--h:71%"></i><i style="--h:88%"></i><i style="--h:30%"></i><i style="--h:47%"></i><i style="--h:64%"></i><i style="--h:81%"></i><i style="--h:23%"></i><i style="--h:40%"></i><i style="--h:57%"></i><i style="--h:74%"></i><i style="--h:91%"></i><i style="--h:33%"></i><i style="--h:50%"></i><i style="--h:67%"></i><i style="--h:84%"></i><i style="--h:26%"></i><i style="--h:43%"></i><i style="--h:60%"></i><i style="--h:77%"></i><i style="--h:94%"></i><i style="--h:36%"></i><i style="--h:53%"></i><i style="--h:70%"></i><i style="--h:87%"></i><i style="--h:29%"></i></div>
-        </div>
-
-        <div class="float-label label-a">MOTION</div>
-        <div class="float-label label-b">SYNC</div>
-        <div class="float-label label-c">VFX</div>
-      </div>
-
-      <a class="scroll-cue" href="#sobre"><span>SCROLL</span><i></i></a>
-    </section>
-
-    <div class="ticker" aria-hidden="true">
-      <div>ANIME EDITS ✦ AFTER EFFECTS ✦ MOTION ✦ ROTOSCOPIA ✦ SHORT FORM ✦ COLOR GRADING ✦ TRANSIÇÕES ✦</div>
-      <div>ANIME EDITS ✦ AFTER EFFECTS ✦ MOTION ✦ ROTOSCOPIA ✦ SHORT FORM ✦ COLOR GRADING ✦ TRANSIÇÕES ✦</div>
-    </div>
-
-    <section class="section about" id="sobre">
-      <div class="section-title reveal">
-        <p class="eyebrow"><span></span> SOBRE MIM</p>
-        <h2>Da primeira edit<br>ao próximo nível.</h2>
-      </div>
-      <div class="about-layout">
-        <div class="about-copy reveal">
-          <p>Comecei a editar em <strong>2020</strong>, criando vídeos curtos de anime e experimentando sincronização, músicas e efeitos.</p>
-          <p>Com o tempo, passei a explorar filmes, conteúdos verticais, composição, rotoscopia, transições e motion no After Effects.</p>
-          <p>Hoje, cada projeto é uma oportunidade de construir uma experiência visual com personalidade e ritmo.</p>
-          <a class="text-link magnetic" href="https://www.youtube.com/@g3noseditz" target="_blank" rel="noopener">Conhecer o canal ↗</a>
-        </div>
-
-        <div class="skill-stack reveal">
-          <article style="--z:0"><span>01</span><strong>RITMO</strong><small>Cortes sincronizados e impacto musical.</small></article>
-          <article style="--z:1"><span>02</span><strong>COMPOSIÇÃO</strong><small>Profundidade, foco e direção visual.</small></article>
-          <article style="--z:2"><span>03</span><strong>MOTION</strong><small>Movimento que reforça cada cena.</small></article>
-          <article style="--z:3"><span>04</span><strong>IDENTIDADE</strong><small>Estilo reconhecível em cada trabalho.</small></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="timeline-world">
-      <div class="timeline-copy reveal">
-        <p class="eyebrow"><span></span> PROCESSO CRIATIVO</p>
-        <h2>Uma edit é construída<br>em camadas.</h2>
-        <p>Cada elemento entra no momento certo: cena, ritmo, efeitos, cor e acabamento.</p>
-      </div>
-      <div class="timeline-stage reveal" id="timelineStage">
-        <div class="timeline-ruler">
-          <span>00:00</span><span>00:04</span><span>00:08</span><span>00:12</span><span>00:16</span>
-        </div>
-        <div class="timeline-playhead"></div>
-        <div class="track track-1"><b>VÍDEO</b><i></i><i></i><i></i></div>
-        <div class="track track-2"><b>EFEITOS</b><i></i><i></i></div>
-        <div class="track track-3"><b>COR</b><i></i></div>
-        <div class="track track-4"><b>ÁUDIO</b><div class="mini-wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
-      </div>
-    </section>
-
-    <section class="webgl-showcase" id="universo">
-      <div class="webgl-copy reveal">
-        <p class="eyebrow"><span></span> UNIVERSO G3NOS</p>
-        <h2>Entre dentro<br>da edição.</h2>
-        <p>Câmera, luzes, partículas e objetos tridimensionais respondem ao seu movimento em tempo real.</p>
-        <div class="webgl-legend">
-          <span>◉ Mover o mouse</span><span>↕ Rolar</span><span>▶ Abrir edits</span>
-        </div>
-      </div>
-      <div class="portal reveal" aria-hidden="true">
-        <div class="portal-ring ring-a"></div>
-        <div class="portal-ring ring-b"></div>
-        <div class="portal-ring ring-c"></div>
-        <div class="portal-core"><strong>17</strong><span>EDITS</span></div>
-      </div>
-    </section>
-
-    <section class="section portfolio" id="portfolio">
-      <div class="section-title portfolio-title reveal">
-        <div>
-          <p class="eyebrow"><span></span> PORTFÓLIO</p>
-          <h2>17 edits.<br>Uma identidade.</h2>
-        </div>
-        <p>Explore em 3D ou veja todos os trabalhos na galeria. Clique em qualquer projeto para assistir.</p>
-      </div>
-
-      <div class="ring-section reveal">
-        <div class="ring-copy">
-          <span>ARRASTE PARA GIRAR</span>
-          <strong>Seleção orbital</strong>
-          <small>As 17 edits em um carrossel tridimensional.</small>
-        </div>
-        <div class="ring-controls">
-          <button type="button" id="ringPrev" aria-label="Girar para esquerda">‹</button>
-          <button type="button" id="ringNext" aria-label="Girar para direita">›</button>
-        </div>
-        <div class="ring-viewport" id="ringViewport">
-          <div class="ring" id="ring">
-            
-          <button class="ring-card" type="button" data-index="0" style="--index:0" aria-label="Abrir Edit 01">
-            <img src="https://i.ytimg.com/vi/xu1q9g6cG6Q/hqdefault.jpg" alt="" loading="lazy">
-            <span>01</span>
-          </button>
-          <button class="ring-card" type="button" data-index="1" style="--index:1" aria-label="Abrir Edit 02">
-            <img src="https://i.ytimg.com/vi/efcKAYV2TkU/hqdefault.jpg" alt="" loading="lazy">
-            <span>02</span>
-          </button>
-          <button class="ring-card" type="button" data-index="2" style="--index:2" aria-label="Abrir Edit 03">
-            <img src="https://i.ytimg.com/vi/WgfzsT_FNdU/hqdefault.jpg" alt="" loading="lazy">
-            <span>03</span>
-          </button>
-          <button class="ring-card" type="button" data-index="3" style="--index:3" aria-label="Abrir Edit 04">
-            <img src="https://i.ytimg.com/vi/5hD0dbfG0KQ/hqdefault.jpg" alt="" loading="lazy">
-            <span>04</span>
-          </button>
-          <button class="ring-card" type="button" data-index="4" style="--index:4" aria-label="Abrir Edit 05">
-            <img src="https://i.ytimg.com/vi/QMFi8eKfy80/hqdefault.jpg" alt="" loading="lazy">
-            <span>05</span>
-          </button>
-          <button class="ring-card" type="button" data-index="5" style="--index:5" aria-label="Abrir Edit 06">
-            <img src="https://i.ytimg.com/vi/wlF-JE-bYCk/hqdefault.jpg" alt="" loading="lazy">
-            <span>06</span>
-          </button>
-          <button class="ring-card" type="button" data-index="6" style="--index:6" aria-label="Abrir Edit 07">
-            <img src="https://i.ytimg.com/vi/J38rMJNGTPY/hqdefault.jpg" alt="" loading="lazy">
-            <span>07</span>
-          </button>
-          <button class="ring-card" type="button" data-index="7" style="--index:7" aria-label="Abrir Edit 08">
-            <img src="https://i.ytimg.com/vi/-ZbRzfAF3ws/hqdefault.jpg" alt="" loading="lazy">
-            <span>08</span>
-          </button>
-          <button class="ring-card" type="button" data-index="8" style="--index:8" aria-label="Abrir Edit 09">
-            <img src="https://i.ytimg.com/vi/OYmjtbdIAF8/hqdefault.jpg" alt="" loading="lazy">
-            <span>09</span>
-          </button>
-          <button class="ring-card" type="button" data-index="9" style="--index:9" aria-label="Abrir Edit 10">
-            <img src="https://i.ytimg.com/vi/0vd1HhMuG9w/hqdefault.jpg" alt="" loading="lazy">
-            <span>10</span>
-          </button>
-          <button class="ring-card" type="button" data-index="10" style="--index:10" aria-label="Abrir Edit 11">
-            <img src="https://i.ytimg.com/vi/O1Q-cv9F9iM/hqdefault.jpg" alt="" loading="lazy">
-            <span>11</span>
-          </button>
-          <button class="ring-card" type="button" data-index="11" style="--index:11" aria-label="Abrir Edit 12">
-            <img src="https://i.ytimg.com/vi/7UY6gU4TFIg/hqdefault.jpg" alt="" loading="lazy">
-            <span>12</span>
-          </button>
-          <button class="ring-card" type="button" data-index="12" style="--index:12" aria-label="Abrir Edit 13">
-            <img src="https://i.ytimg.com/vi/fS4uOKkMqPE/hqdefault.jpg" alt="" loading="lazy">
-            <span>13</span>
-          </button>
-          <button class="ring-card" type="button" data-index="13" style="--index:13" aria-label="Abrir Edit 14">
-            <img src="https://i.ytimg.com/vi/_896l21-Id0/hqdefault.jpg" alt="" loading="lazy">
-            <span>14</span>
-          </button>
-          <button class="ring-card" type="button" data-index="14" style="--index:14" aria-label="Abrir Edit 15">
-            <img src="https://i.ytimg.com/vi/AsMrSA5xBNM/hqdefault.jpg" alt="" loading="lazy">
-            <span>15</span>
-          </button>
-          <button class="ring-card" type="button" data-index="15" style="--index:15" aria-label="Abrir Edit 16">
-            <img src="https://i.ytimg.com/vi/hYoBa3BQjNY/hqdefault.jpg" alt="" loading="lazy">
-            <span>16</span>
-          </button>
-          <button class="ring-card" type="button" data-index="16" style="--index:16" aria-label="Abrir Edit 17">
-            <img src="https://i.ytimg.com/vi/SBSTOTKcIAo/hqdefault.jpg" alt="" loading="lazy">
-            <span>17</span>
-          </button>
-          </div>
-        </div>
-      </div>
-
-      <div class="portfolio-bar reveal">
-        <div class="filters">
-          <button class="filter active magnetic" type="button" data-filter="all">Todas</button>
-          <button class="filter magnetic" type="button" data-filter="featured">Destaques</button>
-          <button class="filter magnetic" type="button" data-filter="recent">Recentes</button>
-        </div>
-        <span><i></i> 17 trabalhos disponíveis</span>
-      </div>
-
-      <div class="project-grid">
-        
-        <article class="project-card reveal featured" data-video="xu1q9g6cG6Q" data-index="0">
-          <button class="project-open" type="button" aria-label="Assistir Edit 01">
-            <div class="project-media">
-              <img src="https://i.ytimg.com/vi/xu1q9g6cG6Q/maxresdefault.jpg"
-                   data-fallback="https://i.ytimg.com/vi/xu1q9g6cG6Q/hqdefault.jpg"
-                   alt="Thumbnail da Edit 01" loading="lazy">
-              <span class="project-gradient"></span>
-              <span class="project-number">01</span>
-              <span class="project-play"><i>▶</i></span>
-              <span class="project-label">PLAY</span>
-            </div>
-            <div class="project-meta">
-              <div><small>G3NOS EDITZ</small><h3>Edit 01</h3></div>
-              <span class="project-arrow">↗</span>
-            </div>
-          </button>
-        </article>
-        <article class="project-card reveal featured" data-video="efcKAYV2TkU" data-index="1">
-          <button class="project-open" type="button" aria-label="Assistir Edit 02">
-            <div class="project-media">
-              <img src="https://i.ytimg.com/vi/efcKAYV2TkU/maxresdefault.jpg"
-                   data-fallback="https://i.ytimg.com/vi/efcKAYV2TkU/hqdefault.jpg"
-                   alt="Thumbnail da Edit 02" loading="lazy">
-              <span class="project-gradient"></span>
-              <span class="project-number">02</span>
-              <span class="project-play"><i>▶</i></span>
-              <span class="project-label">PLAY</span>
-            </div>
-            <div class="project-meta">
-              <div><small>G3NOS EDITZ</small><h3>Edit 02</h3></div>
-              <span class="project-arrow">↗</span>
-            </div>
-          </button>
-        </article>
-        <article class="project-card reveal featured" data-video="WgfzsT_FNdU" data-index="2">
-          <button class="project-open" type="button" aria-label="Assistir Edit 03">
-            <div class="project-media">
-              <img src="https://i.ytimg.com/vi/WgfzsT_FNdU/maxresdefault.jpg"
-                   data-fallback="https://i.ytimg.com/vi/WgfzsT_FNdU/hqdefault.jpg"
-                   alt="Thumbnail da Edit 03" loading="lazy">
-              <span class="project-gradient"></span>
-              <span class="project-number">03</span>
-              <span class="project-play"><i>▶</i></span>
-              <span class="project-label">PLAY</span>
-            </div>
-            <div class="project-meta">
-              <div><small>G3NOS EDITZ</small><h3>Edit 03</h3></div>
-              <span class="project-arrow">↗</span>
-            </div>
-          </button>
-        </article>
-        <article class="project-card reveal featured" data-video="5hD0dbfG0KQ" data-index="3">
-          <button class="project-open" type="button" aria-label="Assistir Edit 04">
-            <div class="project-media">
-              <img src="https://i.ytimg.com/vi/5hD0dbfG0KQ/maxresdefault.jpg"
-                   data-fallback="https://i.ytimg.com/vi/5hD0dbfG0KQ/hqdefault.jpg"
-                   alt="Thumbnail da Edit 04" loading="lazy">
-              <span class="project-gradient"></span>
-              <span class="project-number">04</span>
-              <span class="project-play"><i>▶</i></span>
-              <span class="project-label">PLAY</span>
-            </div>
-            <div class="project-meta">
-              <div><small>G3NOS EDITZ</small><h3>Edit 04</h3></div>
-              <span class="project-arrow">↗</span>
-            </div>
-          </button>
-        </article>
-        <article class="project-card reveal featured" data-video="QMFi8eKfy80" data-index="4">
-          <button class="project-open" type="button" aria-label="Assistir Edit 05">
-            <div class="project-media">
-              <img src="https://i.ytimg.com/vi/QMFi8eKfy80/maxresdefault.jpg"
-                   data-fallback="https://i.ytimg.com/vi/QMFi8eKfy80/hqdefault.jpg"
-                   alt="Thumbnail da Edit 05" loading="lazy">
-              <span class="project-gradient"></span>
-              <span class="project-number">05</span>
-              <span class="project-play"><i>▶</i></span>
-              <span class="project-label">PLAY</span>
-            </div>
-            <div class="project-meta">
-              <div><small>G3NOS EDITZ</small><h3>Edit 05</h3></div>
-              <span class="project-arrow">↗</span>
-            </div>
-          </button>
-        </article>
-        <article class="project-card reveal featured" data-video="wlF-JE-bYCk" data-index="5">
-          <button class="project-open" type="button" aria-label="Assistir Edit 06">
-            <div class="project-media">
-              <img src="https://i.ytimg.com/vi/wlF-JE-bYCk/maxresdefault.jpg"
-                   data-fallback="https://i.ytimg.com/vi/wlF-JE-bYCk/hqdefault.jpg"
-                   alt="Thumbnail da Edit 06" loading="lazy">
-              <span class="project-gradient"></span>
-              <span class="project-number">06</span>
-              <span class="project-play"><i>▶</i></span>
-              <span class="project-label">PLAY</span>
-            </div>
-            <div class="project-meta">
-              <div><small>G3NOS EDITZ</small><h3>Edit 06</h3></div>
-              <span class="project-arrow">↗</span>
-            </div>
-          </button>
-        </article>
-        <article class="project-card reveal" data-video="J38rMJNGTPY" data-index="6">
-          <button class="project-open" type="button" aria-label="Assistir Edit 07">
-            <div class="project-media">
-              <img src="https://i.ytimg.com/vi/J38rMJNGTPY/maxresdefault.jpg"
-                   data-fallback="https://i.ytimg.com/vi/J38rMJNGTPY/hqdefault.jpg"
-                   alt="Thumbnail da Edit 07" loading="lazy">
-              <span class="project-gradient"></span>
-              <span class="project-number">07</span>
-              <span class="project-play"><i>▶</i></span>
-              <span class="project-label">PLAY</span>
-            </div>
-            <div class="project-meta">
-              <div><small>G3NOS EDITZ</small><h3>Edit 07</h3></div>
-              <span class="project-arrow">↗</span>
-            </div>
-          </button>
-        </article>
-        <article class="project-card reveal" data-video="-ZbRzfAF3ws" data-index="7">
-          <button class="project-open" type="button" aria-label="Assistir Edit 08">
-            <div class="project-media">
-              <img src="https://i.ytimg.com/vi/-ZbRzfAF3ws/maxresdefault.jpg"
-                   data-fallback="https://i.ytimg.com/vi/-ZbRzfAF3ws/hqdefault.jpg"
-                   alt="Thumbnail da Edit 08" loading="lazy">
-              <span class="project-gradient"></span>
-              <span class="project-number">08</span>
-              <span class="project-play"><i>▶</i></span>
-              <span class="project-label">PLAY</span>
-            </div>
-            <div class="project-meta">
-              <div><small>G3NOS EDITZ</small><h3>Edit 08</h3></div>
-              <span class="project-arrow">↗</span>
-            </div>
-          </button>
-        </article>
-        <article class="project-card reveal" data-video="OYmjtbdIAF8" data-index="8">
-          <button class="project-open" type="button" aria-label="Assistir Edit 09">
-            <div class="project-media">
-              <img src="https://i.ytimg.com/vi/OYmjtbdIAF8/maxresdefault.jpg"
-                   data-fallback="https://i.ytimg.com/vi/OYmjtbdIAF8/hqdefault.jpg"
-                   alt="Thumbnail da Edit 09" loading="lazy">
-              <span class="project-gradient"></span>
-              <span class="project-number">09</span>
-              <span class="project-play"><i>▶</i></span>
-              <span class="project-label">PLAY</span>
-            </div>
-            <div class="project-meta">
-              <div><small>G3NOS EDITZ</small><h3>Edit 09</h3></div>
-              <span class="project-arrow">↗</span>
-            </div>
-          </button>
-        </article>
-        <article class="project-card reveal" data-video="0vd1HhMuG9w" data-index="9">
-          <button class="project-open" type="button" aria-label="Assistir Edit 10">
-            <div class="project-media">
-              <img src="https://i.ytimg.com/vi/0vd1HhMuG9w/maxresdefault.jpg"
-                   data-fallback="https://i.ytimg.com/vi/0vd1HhMuG9w/hqdefault.jpg"
-                   alt="Thumbnail da Edit 10" loading="lazy">
-              <span class="project-gradient"></span>
-              <span class="project-number">10</span>
-              <span class="project-play"><i>▶</i></span>
-              <span class="project-label">PLAY</span>
-            </div>
-            <div class="project-meta">
-              <div><small>G3NOS EDITZ</small><h3>Edit 10</h3></div>
-              <span class="project-arrow">↗</span>
-            </div>
-          </button>
-        </article>
-        <article class="project-card reveal recent" data-video="O1Q-cv9F9iM" data-index="10">
-          <button class="project-open" type="button" aria-label="Assistir Edit 11">
-            <div class="project-media">
-              <img src="https://i.ytimg.com/vi/O1Q-cv9F9iM/maxresdefault.jpg"
-                   data-fallback="https://i.ytimg.com/vi/O1Q-cv9F9iM/hqdefault.jpg"
-                   alt="Thumbnail da Edit 11" loading="lazy">
-              <span class="project-gradient"></span>
-              <span class="project-number">11</span>
-              <span class="project-play"><i>▶</i></span>
-              <span class="project-label">PLAY</span>
-            </div>
-            <div class="project-meta">
-              <div><small>G3NOS EDITZ</small><h3>Edit 11</h3></div>
-              <span class="project-arrow">↗</span>
-            </div>
-          </button>
-        </article>
-        <article class="project-card reveal recent" data-video="7UY6gU4TFIg" data-index="11">
-          <button class="project-open" type="button" aria-label="Assistir Edit 12">
-            <div class="project-media">
-              <img src="https://i.ytimg.com/vi/7UY6gU4TFIg/maxresdefault.jpg"
-                   data-fallback="https://i.ytimg.com/vi/7UY6gU4TFIg/hqdefault.jpg"
-                   alt="Thumbnail da Edit 12" loading="lazy">
-              <span class="project-gradient"></span>
-              <span class="project-number">12</span>
-              <span class="project-play"><i>▶</i></span>
-              <span class="project-label">PLAY</span>
-            </div>
-            <div class="project-meta">
-              <div><small>G3NOS EDITZ</small><h3>Edit 12</h3></div>
-              <span class="project-arrow">↗</span>
-            </div>
-          </button>
-        </article>
-        <article class="project-card reveal recent" data-video="fS4uOKkMqPE" data-index="12">
-          <button class="project-open" type="button" aria-label="Assistir Edit 13">
-            <div class="project-media">
-              <img src="https://i.ytimg.com/vi/fS4uOKkMqPE/maxresdefault.jpg"
-                   data-fallback="https://i.ytimg.com/vi/fS4uOKkMqPE/hqdefault.jpg"
-                   alt="Thumbnail da Edit 13" loading="lazy">
-              <span class="project-gradient"></span>
-              <span class="project-number">13</span>
-              <span class="project-play"><i>▶</i></span>
-              <span class="project-label">PLAY</span>
-            </div>
-            <div class="project-meta">
-              <div><small>G3NOS EDITZ</small><h3>Edit 13</h3></div>
-              <span class="project-arrow">↗</span>
-            </div>
-          </button>
-        </article>
-        <article class="project-card reveal recent" data-video="_896l21-Id0" data-index="13">
-          <button class="project-open" type="button" aria-label="Assistir Edit 14">
-            <div class="project-media">
-              <img src="https://i.ytimg.com/vi/_896l21-Id0/maxresdefault.jpg"
-                   data-fallback="https://i.ytimg.com/vi/_896l21-Id0/hqdefault.jpg"
-                   alt="Thumbnail da Edit 14" loading="lazy">
-              <span class="project-gradient"></span>
-              <span class="project-number">14</span>
-              <span class="project-play"><i>▶</i></span>
-              <span class="project-label">PLAY</span>
-            </div>
-            <div class="project-meta">
-              <div><small>G3NOS EDITZ</small><h3>Edit 14</h3></div>
-              <span class="project-arrow">↗</span>
-            </div>
-          </button>
-        </article>
-        <article class="project-card reveal recent" data-video="AsMrSA5xBNM" data-index="14">
-          <button class="project-open" type="button" aria-label="Assistir Edit 15">
-            <div class="project-media">
-              <img src="https://i.ytimg.com/vi/AsMrSA5xBNM/maxresdefault.jpg"
-                   data-fallback="https://i.ytimg.com/vi/AsMrSA5xBNM/hqdefault.jpg"
-                   alt="Thumbnail da Edit 15" loading="lazy">
-              <span class="project-gradient"></span>
-              <span class="project-number">15</span>
-              <span class="project-play"><i>▶</i></span>
-              <span class="project-label">PLAY</span>
-            </div>
-            <div class="project-meta">
-              <div><small>G3NOS EDITZ</small><h3>Edit 15</h3></div>
-              <span class="project-arrow">↗</span>
-            </div>
-          </button>
-        </article>
-        <article class="project-card reveal recent" data-video="hYoBa3BQjNY" data-index="15">
-          <button class="project-open" type="button" aria-label="Assistir Edit 16">
-            <div class="project-media">
-              <img src="https://i.ytimg.com/vi/hYoBa3BQjNY/maxresdefault.jpg"
-                   data-fallback="https://i.ytimg.com/vi/hYoBa3BQjNY/hqdefault.jpg"
-                   alt="Thumbnail da Edit 16" loading="lazy">
-              <span class="project-gradient"></span>
-              <span class="project-number">16</span>
-              <span class="project-play"><i>▶</i></span>
-              <span class="project-label">PLAY</span>
-            </div>
-            <div class="project-meta">
-              <div><small>G3NOS EDITZ</small><h3>Edit 16</h3></div>
-              <span class="project-arrow">↗</span>
-            </div>
-          </button>
-        </article>
-        <article class="project-card reveal recent" data-video="SBSTOTKcIAo" data-index="16">
-          <button class="project-open" type="button" aria-label="Assistir Edit 17">
-            <div class="project-media">
-              <img src="https://i.ytimg.com/vi/SBSTOTKcIAo/maxresdefault.jpg"
-                   data-fallback="https://i.ytimg.com/vi/SBSTOTKcIAo/hqdefault.jpg"
-                   alt="Thumbnail da Edit 17" loading="lazy">
-              <span class="project-gradient"></span>
-              <span class="project-number">17</span>
-              <span class="project-play"><i>▶</i></span>
-              <span class="project-label">PLAY</span>
-            </div>
-            <div class="project-meta">
-              <div><small>G3NOS EDITZ</small><h3>Edit 17</h3></div>
-              <span class="project-arrow">↗</span>
-            </div>
-          </button>
-        </article>
-      </div>
-    </section>
-
-    <section class="section services" id="servicos">
-      <div class="section-title reveal">
-        <p class="eyebrow"><span></span> SERVIÇOS</p>
-        <h2>Do conceito<br>ao frame final.</h2>
-      </div>
-      <div class="service-grid">
-        <article class="service reveal"><span>01</span><h3>Anime edits</h3><p>Montagem, sincronização, efeitos e acabamento visual.</p></article>
-        <article class="service reveal"><span>02</span><h3>Short form</h3><p>Vídeos verticais para TikTok, Reels e YouTube Shorts.</p></article>
-        <article class="service reveal"><span>03</span><h3>Motion & VFX</h3><p>Textos animados, transições, composição e efeitos.</p></article>
-        <article class="service reveal"><span>04</span><h3>Edição criativa</h3><p>Projetos de cultura pop, filmes, games e música.</p></article>
-      </div>
-    </section>
-
-    <section class="contact" id="contato">
-      <div class="contact-orbit"></div>
-      <p class="eyebrow reveal"><span></span> VAMOS CRIAR</p>
-      <h2 class="reveal">Tem uma ideia?<br><em>Vamos dar movimento.</em></h2>
-      <div class="contact-actions reveal">
-        <a class="btn btn-primary magnetic" href="https://www.youtube.com/@g3noseditz" target="_blank" rel="noopener">YouTube ↗</a>
-        <a class="btn btn-ghost magnetic" href="https://www.tiktok.com/@.d34d.since.2020?lang=en" target="_blank" rel="noopener">TikTok ↗</a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <a class="brand" href="#inicio"><strong>G3NOS</strong><span>EDITZ</span><i>シ</i></a>
-    <p>Editor desde 2020 • Portfólio 3D</p>
-    <a href="#inicio">Voltar ao topo ↑</a>
-  </footer>
-
-  
-  <section class="workstation" id="workstation" aria-hidden="true">
-    <div class="ws-window">
-      <header class="ws-topbar">
-        <div class="ws-brand"><i></i><strong>G3NOS EDITZ</strong><span>Creative Workstation 2026</span></div>
-        <nav class="ws-tabs" aria-label="Áreas da workstation">
-          <button class="active" data-ws-tab="projects" type="button">Projects</button>
-          <button data-ws-tab="composition" type="button">Composition</button>
-          <button data-ws-tab="effects" type="button">Effects</button>
-          <button data-ws-tab="render" type="button">Render</button>
-        </nav>
-        <button class="ws-close" id="closeWorkstation" type="button" aria-label="Fechar workstation">×</button>
-      </header>
-
-      <div class="ws-body">
-        <aside class="ws-sidebar">
-          <div class="ws-panel-title">PROJECT</div>
-          <button class="ws-folder active" type="button"><span>▾</span> G3nos Portfolio</button>
-          <button class="ws-folder" type="button"><span>⌁</span> Compositions <b>17</b></button>
-          <button class="ws-folder" type="button"><span>◫</span> Assets <b>48</b></button>
-          <button class="ws-folder" type="button"><span>✦</span> Effects <b>126</b></button>
-          <div class="ws-system">
-            <span>RENDER ENGINE</span>
-            <div><i></i> GPU Accelerated</div>
-            <small>WebGL • Three.js • GLSL</small>
-          </div>
-        </aside>
-
-        <main class="ws-main">
-          <section class="ws-view active" data-ws-view="projects">
-            <div class="ws-view-header">
-              <div><small>PROJECTS / G3NOS</small><h2>Compositions</h2></div>
-              <div class="ws-view-controls"><button type="button">▦</button><button type="button">☷</button></div>
-            </div>
-            <div class="ws-projects" id="wsProjects"></div>
-          </section>
-
-          <section class="ws-view" data-ws-view="composition">
-            <div class="ws-composition">
-              <div class="ws-preview">
-                <div class="ws-preview-screen" id="wsPreviewScreen">
-                  <img id="wsPreviewImage" alt="Preview do projeto selecionado">
-                  <div class="ws-safe-frame"></div>
-                  <button id="wsPreviewPlay" type="button">▶</button>
-                  <span id="wsPreviewTime">00:00:00:00</span>
-                </div>
-                <div class="ws-preview-controls"><span>25%</span><button type="button">◀</button><button type="button">▶</button><button type="button">▶▶</button><span>Full</span></div>
-              </div>
-              <aside class="ws-inspector" id="wsInspector"></aside>
-            </div>
-            <div class="ws-timeline">
-              <div class="ws-time-ruler"><span>00:00</span><span>00:05</span><span>00:10</span><span>00:15</span><span>00:20</span><span>00:25</span></div>
-              <div class="ws-playhead" id="wsPlayhead"></div>
-              <div class="ws-layer"><b>◉ VIDEO_MASTER</b><i style="--w:92%"></i></div>
-              <div class="ws-layer"><b>✦ ADJUSTMENT_FX</b><i style="--w:74%"></i></div>
-              <div class="ws-layer"><b>◈ COLOR_GRADE</b><i style="--w:88%"></i></div>
-              <div class="ws-layer"><b>⌁ PARTICLES</b><i style="--w:58%"></i></div>
-              <div class="ws-layer audio"><b>♫ AUDIO_SYNC</b><div class="ws-wave"></div></div>
-            </div>
-          </section>
-
-          <section class="ws-view" data-ws-view="effects">
-            <div class="ws-effects">
-              <div class="ws-effect-orb"><div></div><span>GLSL<br>CORE</span></div>
-              <div class="ws-effect-list">
-                <article><span>01</span><h3>Chromatic Aberration</h3><p>Separação dinâmica dos canais RGB.</p><i style="--v:76%"></i></article>
-                <article><span>02</span><h3>Energy Bloom</h3><p>Realce luminoso ligado à intensidade.</p><i style="--v:88%"></i></article>
-                <article><span>03</span><h3>Motion Trails</h3><p>Rastros temporais para reforçar velocidade.</p><i style="--v:64%"></i></article>
-                <article><span>04</span><h3>Digital Distortion</h3><p>Glitch procedural e deslocamento de pixels.</p><i style="--v:52%"></i></article>
-              </div>
-            </div>
-          </section>
-
-          <section class="ws-view" data-ws-view="render">
-            <div class="ws-render">
-              <div class="ws-render-ring"><strong id="renderPercent">0%</strong><span>RENDERING</span></div>
-              <h2>G3nos_Master_4K_FINAL.mp4</h2>
-              <p>Adobe Media Encoder • H.264 • 3840×2160 • Maximum Quality</p>
-              <button id="startRender" type="button">INICIAR RENDERIZAÇÃO</button>
-              <div class="ws-render-log" id="renderLog"><span>Ready to render.</span></div>
-            </div>
-          </section>
-        </main>
-
-        <aside class="ws-rightbar">
-          <div class="ws-panel-title">INFO</div>
-          <div class="ws-info" id="wsInfo"></div>
-          <div class="ws-panel-title">EFFECT CONTROLS</div>
-          <label>Bloom <input type="range" min="0" max="100" value="72"></label>
-          <label>Glow <input type="range" min="0" max="100" value="84"></label>
-          <label>Distortion <input type="range" min="0" max="100" value="38"></label>
-          <label>Chromatic <input type="range" min="0" max="100" value="51"></label>
-        </aside>
-      </div>
-
-      <footer class="ws-statusbar">
-        <span><i></i> PROJECT ONLINE</span>
-        <span>17 ITEMS</span>
-        <span>GPU: ACTIVE</span>
-        <span id="wsClock">00:00:00</span>
-      </footer>
-    </div>
-  </section>
-
-  <div class="cinematic-transition" id="cinematicTransition" aria-hidden="true">
-    <div class="cinematic-line"></div><div class="cinematic-title" id="cinematicTitle">EDIT 01</div>
-  </div>
-  <div class="modal" id="modal" aria-hidden="true">
-    <div class="modal-backdrop" data-close></div>
-    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <button class="modal-close" type="button" data-close aria-label="Fechar">×</button>
-      <button class="modal-nav modal-prev" type="button" id="modalPrev" aria-label="Edit anterior">‹</button>
-      <button class="modal-nav modal-next" type="button" id="modalNext" aria-label="Próxima edit">›</button>
-      <div class="modal-video" id="modalVideo"></div>
-      <div class="modal-meta">
-        <div><small>G3NOS EDITZ</small><strong id="modalTitle">Edit 01</strong></div>
-        <span id="modalCount">01 / 17</span>
-        <a id="modalLink" href="#" target="_blank" rel="noopener">Abrir no YouTube ↗</a>
-      </div>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
-  <script type="module" src="scene.js"></script>
+<canvas aria-hidden="true" id="webglScene"></canvas>
+<canvas aria-hidden="true" id="space"></canvas>
+<div class="boot-screen" id="bootScreen">
+<div class="boot-logo"><strong>G3NOS</strong><span>EDITZ</span></div>
+<div class="boot-copy">INICIALIZANDO EXPERIÊNCIA 3D</div>
+<div class="boot-track"><i id="bootBar"></i></div>
+<small id="bootPercent">0%</small>
+</div>
+<div aria-hidden="true" class="grain"></div>
+<div class="progress" id="progress"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"><span>PLAY</span></div>
+<header class="header">
+<a aria-label="Ir para o início" class="brand magnetic" href="#inicio">
+<strong>G3NOS</strong><span>EDITZ</span><i>シ</i>
+</a>
+<button aria-expanded="false" aria-label="Abrir menu" class="menu-toggle" id="menuToggle" type="button">
+<span></span><span></span>
+</button>
+<nav class="nav" id="nav">
+<a href="#sobre">Sobre</a>
+<a href="#portfolio">Trabalhos</a>
+<a href="#servicos">Serviços</a>
+<a class="nav-cta magnetic" href="#contato">Criar projeto</a>
+</nav>
+</header>
+<main>
+<section class="hero" id="inicio">
+<div aria-hidden="true" class="scene-hud">
+<span class="hud-status"><i></i> WEBGL EXPERIENCE</span>
+<span class="hud-coordinates" id="hudCoordinates">X 000 / Y 000</span>
+</div>
+<div class="hero-copy reveal">
+<p class="eyebrow"><span></span> EDITOR • MOTION • ANIME</p>
+<h1>Eu transformo<br/>cenas em <em>impacto.</em></h1>
+<p class="hero-lead">Edits construídas com ritmo, composição e energia visual. Uma experiência criada para ser sentida, não apenas assistida.</p>
+<div class="hero-actions">
+<button class="btn btn-primary magnetic" data-open-index="0" type="button">Assistir destaque <b>▶</b></button>
+<a class="btn btn-ghost magnetic" href="#portfolio">Explorar trabalhos <b>↓</b></a>
+<button class="btn btn-software magnetic" id="openWorkstation" type="button">Abrir workstation <b>⌘</b></button>
+</div>
+<div class="hero-metrics">
+<div><strong>2020</strong><span>início da jornada</span></div>
+<div><strong>17</strong><span>edits selecionadas</span></div>
+<div><strong>17/17</strong><span>projetos documentados</span></div>
+</div>
+</div>
+<div class="studio reveal" id="studio">
+<div class="studio-grid"></div>
+<div class="studio-halo halo-a"></div>
+<div class="studio-halo halo-b"></div>
+<div class="screen-rig" id="screenRig">
+<div class="screen-shell">
+<div class="screen">
+<img alt="Edit em destaque" data-fallback="https://i.ytimg.com/vi/xu1q9g6cG6Q/hqdefault.jpg" src="https://i.ytimg.com/vi/xu1q9g6cG6Q/maxresdefault.jpg"/>
+<div class="screen-overlay"></div>
+<div class="screen-scan"></div>
+<div class="screen-ui">
+<span>PREVIEW / 01</span>
+<span>00:00:17</span>
+</div>
+<button aria-label="Assistir edit em destaque" class="screen-button" data-open-index="0" type="button">▶</button>
+</div>
+</div>
+<div class="screen-arm"></div>
+<div class="screen-foot"></div>
+</div>
+<div class="layer layer-video">
+<span>VIDEO 01</span><i></i><i></i><i></i><i></i><i></i>
+</div>
+<div class="layer layer-fx">
+<span>ADJUSTMENT</span><i></i><i></i><i></i>
+</div>
+<div class="layer layer-audio">
+<span>AUDIO</span>
+<div class="wave"><i style="--h:20%"></i><i style="--h:37%"></i><i style="--h:54%"></i><i style="--h:71%"></i><i style="--h:88%"></i><i style="--h:30%"></i><i style="--h:47%"></i><i style="--h:64%"></i><i style="--h:81%"></i><i style="--h:23%"></i><i style="--h:40%"></i><i style="--h:57%"></i><i style="--h:74%"></i><i style="--h:91%"></i><i style="--h:33%"></i><i style="--h:50%"></i><i style="--h:67%"></i><i style="--h:84%"></i><i style="--h:26%"></i><i style="--h:43%"></i><i style="--h:60%"></i><i style="--h:77%"></i><i style="--h:94%"></i><i style="--h:36%"></i><i style="--h:53%"></i><i style="--h:70%"></i><i style="--h:87%"></i><i style="--h:29%"></i></div>
+</div>
+<div class="float-label label-a">MOTION</div>
+<div class="float-label label-b">SYNC</div>
+<div class="float-label label-c">VFX</div>
+</div>
+<a class="scroll-cue" href="#sobre"><span>SCROLL</span><i></i></a>
+</section>
+<div aria-hidden="true" class="ticker">
+<div>ANIME EDITS ✦ AFTER EFFECTS ✦ MOTION ✦ ROTOSCOPIA ✦ SHORT FORM ✦ COLOR GRADING ✦ TRANSIÇÕES ✦</div>
+<div>ANIME EDITS ✦ AFTER EFFECTS ✦ MOTION ✦ ROTOSCOPIA ✦ SHORT FORM ✦ COLOR GRADING ✦ TRANSIÇÕES ✦</div>
+</div>
+<section class="section about" id="sobre">
+<div class="section-title reveal">
+<p class="eyebrow"><span></span> SOBRE MIM</p>
+<h2>Da primeira edit<br/>ao próximo nível.</h2>
+</div>
+<div class="about-layout">
+<div class="about-copy reveal">
+<p>Comecei a editar em <strong>2020</strong>, criando vídeos curtos de anime e experimentando sincronização, músicas e efeitos.</p>
+<p>Com o tempo, passei a explorar filmes, conteúdos verticais, composição, rotoscopia, transições e motion no After Effects.</p>
+<p>Hoje, cada projeto é uma oportunidade de construir uma experiência visual com personalidade e ritmo.</p>
+<a class="text-link magnetic" href="https://www.youtube.com/@g3noseditz" rel="noopener" target="_blank">Conhecer o canal ↗</a>
+</div>
+<div class="skill-stack reveal">
+<article style="--z:0"><span>01</span><strong>RITMO</strong><small>Cortes sincronizados e impacto musical.</small></article>
+<article style="--z:1"><span>02</span><strong>COMPOSIÇÃO</strong><small>Profundidade, foco e direção visual.</small></article>
+<article style="--z:2"><span>03</span><strong>MOTION</strong><small>Movimento que reforça cada cena.</small></article>
+<article style="--z:3"><span>04</span><strong>IDENTIDADE</strong><small>Estilo reconhecível em cada trabalho.</small></article>
+</div>
+</div>
+</section>
+<section class="timeline-world">
+<div class="timeline-copy reveal">
+<p class="eyebrow"><span></span> PROCESSO CRIATIVO</p>
+<h2>Uma edit é construída<br/>em camadas.</h2>
+<p>Cada elemento entra no momento certo: cena, ritmo, efeitos, cor e acabamento.</p>
+</div>
+<div class="timeline-stage reveal" id="timelineStage">
+<div class="timeline-ruler">
+<span>00:00</span><span>00:04</span><span>00:08</span><span>00:12</span><span>00:16</span>
+</div>
+<div class="timeline-playhead"></div>
+<div class="track track-1"><b>VÍDEO</b><i></i><i></i><i></i></div>
+<div class="track track-2"><b>EFEITOS</b><i></i><i></i></div>
+<div class="track track-3"><b>COR</b><i></i></div>
+<div class="track track-4"><b>ÁUDIO</b><div class="mini-wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+</div>
+</section>
+<section class="webgl-showcase" id="universo">
+<div class="webgl-copy reveal">
+<p class="eyebrow"><span></span> UNIVERSO G3NOS</p>
+<h2>Entre dentro<br/>da edição.</h2>
+<p>Câmera, luzes, partículas e objetos tridimensionais respondem ao seu movimento em tempo real.</p>
+<div class="webgl-legend">
+<span>◉ Mover o mouse</span><span>↕ Rolar</span><span>▶ Abrir edits</span>
+</div>
+</div>
+<div aria-hidden="true" class="portal reveal">
+<div class="portal-ring ring-a"></div>
+<div class="portal-ring ring-b"></div>
+<div class="portal-ring ring-c"></div>
+<div class="portal-core"><strong>17</strong><span>EDITS</span></div>
+</div>
+</section>
+<section class="section portfolio" id="portfolio">
+<div class="section-title portfolio-title reveal">
+<div>
+<p class="eyebrow"><span></span> PORTFÓLIO</p>
+<h2>17 edits.<br/>Uma identidade.</h2>
+</div>
+<p>Cada trabalho agora possui nome, conceito, ficha técnica, paleta própria e uma apresentação consistente em toda a experiência.</p>
+</div>
+<div class="ring-section reveal">
+<div class="ring-copy">
+<span>ARRASTE PARA GIRAR</span>
+<strong>Seleção orbital</strong>
+<small>As 17 edits em um carrossel tridimensional.</small>
+</div>
+<div class="ring-controls">
+<button aria-label="Girar para esquerda" id="ringPrev" type="button">‹</button>
+<button aria-label="Girar para direita" id="ringNext" type="button">›</button>
+</div>
+<div class="ring-viewport" id="ringViewport">
+<div class="ring" id="ring"></div>
+</div>
+</div>
+<div class="portfolio-bar reveal">
+<div class="filters">
+<button class="filter active magnetic" data-filter="all" type="button">Todas</button>
+<button class="filter magnetic" data-filter="featured" type="button">Destaques</button>
+<button class="filter magnetic" data-filter="recent" type="button">Recentes</button>
+</div>
+<span><i></i> 17 trabalhos disponíveis</span>
+</div>
+<div class="project-grid" id="projectGrid"></div>
+</section>
+<section class="section services" id="servicos">
+<div class="section-title reveal">
+<p class="eyebrow"><span></span> SERVIÇOS</p>
+<h2>Do conceito<br/>ao frame final.</h2>
+</div>
+<div class="service-grid">
+<article class="service reveal"><span>01</span><h3>Anime edits</h3><p>Montagem, sincronização, efeitos e acabamento visual.</p></article>
+<article class="service reveal"><span>02</span><h3>Short form</h3><p>Vídeos verticais para TikTok, Reels e YouTube Shorts.</p></article>
+<article class="service reveal"><span>03</span><h3>Motion &amp; VFX</h3><p>Textos animados, transições, composição e efeitos.</p></article>
+<article class="service reveal"><span>04</span><h3>Edição criativa</h3><p>Projetos de cultura pop, filmes, games e música.</p></article>
+</div>
+</section>
+<section class="contact" id="contato">
+<div class="contact-orbit"></div>
+<p class="eyebrow reveal"><span></span> VAMOS CRIAR</p>
+<h2 class="reveal">Tem uma ideia?<br/><em>Vamos dar movimento.</em></h2>
+<div class="contact-actions reveal">
+<a class="btn btn-primary magnetic" href="https://www.youtube.com/@g3noseditz" rel="noopener" target="_blank">YouTube ↗</a>
+<a class="btn btn-ghost magnetic" href="https://www.tiktok.com/@.d34d.since.2020?lang=en" rel="noopener" target="_blank">TikTok ↗</a>
+</div>
+</section>
+</main>
+<footer>
+<a class="brand" href="#inicio"><strong>G3NOS</strong><span>EDITZ</span><i>シ</i></a>
+<p>Editor desde 2020 • Portfólio 3D</p>
+<a href="#inicio">Voltar ao topo ↑</a>
+</footer>
+<section aria-hidden="true" class="workstation" id="workstation">
+<div class="ws-window">
+<header class="ws-topbar">
+<div class="ws-brand"><i></i><strong>G3NOS EDITZ</strong><span>Creative Workstation 2026</span></div>
+<nav aria-label="Áreas da workstation" class="ws-tabs">
+<button class="active" data-ws-tab="projects" type="button">Projects</button>
+<button data-ws-tab="composition" type="button">Composition</button>
+<button data-ws-tab="effects" type="button">Effects</button>
+<button data-ws-tab="render" type="button">Render</button>
+</nav>
+<button aria-label="Fechar workstation" class="ws-close" id="closeWorkstation" type="button">×</button>
+</header>
+<div class="ws-body">
+<aside class="ws-sidebar">
+<div class="ws-panel-title">PROJECT</div>
+<button class="ws-folder active" type="button"><span>▾</span> G3nos Portfolio</button>
+<button class="ws-folder" type="button"><span>⌁</span> Compositions <b>17</b></button>
+<button class="ws-folder" type="button"><span>◫</span> Media Library <b>17</b></button>
+<button class="ws-folder" type="button"><span>✦</span> Creative Tools <b>04</b></button>
+<div class="ws-system">
+<span>RENDER ENGINE</span>
+<div><i></i> GPU Accelerated</div>
+<small>WebGL • Three.js • GLSL</small>
+</div>
+</aside>
+<main class="ws-main">
+<section class="ws-view active" data-ws-view="projects">
+<div class="ws-view-header">
+<div><small>PROJECTS / G3NOS</small><h2>Compositions</h2></div>
+<div class="ws-view-controls"><button type="button">▦</button><button type="button">☷</button></div>
+</div>
+<div class="ws-projects" id="wsProjects"></div>
+</section>
+<section class="ws-view" data-ws-view="composition">
+<div class="ws-composition">
+<div class="ws-preview">
+<div class="ws-preview-screen" id="wsPreviewScreen">
+<img alt="Preview do projeto selecionado" id="wsPreviewImage"/>
+<div class="ws-safe-frame"></div>
+<button id="wsPreviewPlay" type="button">▶</button>
+<span id="wsPreviewTime">00:00:00:00</span>
+</div>
+<div class="ws-preview-controls"><span>25%</span><button type="button">◀</button><button type="button">▶</button><button type="button">▶▶</button><span>Full</span></div>
+</div>
+<aside class="ws-inspector" id="wsInspector"></aside>
+</div>
+<div class="ws-timeline">
+<div class="ws-time-ruler"><span>00:00</span><span>00:05</span><span>00:10</span><span>00:15</span><span>00:20</span><span>00:25</span></div>
+<div class="ws-playhead" id="wsPlayhead"></div>
+<div class="ws-layer"><b>◉ VIDEO_MASTER</b><i style="--w:92%"></i></div>
+<div class="ws-layer"><b>✦ ADJUSTMENT_FX</b><i style="--w:74%"></i></div>
+<div class="ws-layer"><b>◈ COLOR_GRADE</b><i style="--w:88%"></i></div>
+<div class="ws-layer"><b>⌁ PARTICLES</b><i style="--w:58%"></i></div>
+<div class="ws-layer audio"><b>♫ AUDIO_SYNC</b><div class="ws-wave"></div></div>
+</div>
+</section>
+<section class="ws-view" data-ws-view="effects">
+<div class="ws-effects">
+<div class="ws-effect-orb"><div></div><span>GLSL<br/>CORE</span></div>
+<div class="ws-effect-list">
+<article><span>01</span><h3>Chromatic Aberration</h3><p>Separação dinâmica dos canais RGB.</p><i style="--v:76%"></i></article>
+<article><span>02</span><h3>Energy Bloom</h3><p>Realce luminoso ligado à intensidade.</p><i style="--v:88%"></i></article>
+<article><span>03</span><h3>Motion Trails</h3><p>Rastros temporais para reforçar velocidade.</p><i style="--v:64%"></i></article>
+<article><span>04</span><h3>Digital Distortion</h3><p>Glitch procedural e deslocamento de pixels.</p><i style="--v:52%"></i></article>
+</div>
+</div>
+</section>
+<section class="ws-view" data-ws-view="render">
+<div class="ws-render">
+<div class="ws-render-ring"><strong id="renderPercent">0%</strong><span>RENDERING</span></div>
+<h2>G3nos_Master_4K_FINAL.mp4</h2>
+<p>Adobe Media Encoder • H.264 • 3840×2160 • Maximum Quality</p>
+<button id="startRender" type="button">INICIAR RENDERIZAÇÃO</button>
+<div class="ws-render-log" id="renderLog"><span>Ready to render.</span></div>
+</div>
+</section>
+</main>
+<aside class="ws-rightbar">
+<div class="ws-panel-title">INFO</div>
+<div class="ws-info" id="wsInfo"></div>
+<div class="ws-panel-title">EFFECT CONTROLS</div>
+<label>Bloom <input max="100" min="0" type="range" value="72"/></label>
+<label>Glow <input max="100" min="0" type="range" value="84"/></label>
+<label>Distortion <input max="100" min="0" type="range" value="38"/></label>
+<label>Chromatic <input max="100" min="0" type="range" value="51"/></label>
+</aside>
+</div>
+<footer class="ws-statusbar">
+<span><i></i> PROJECT ONLINE</span>
+<span>17 ITEMS</span>
+<span>GPU: ACTIVE</span>
+<span id="wsClock">00:00:00</span>
+</footer>
+</div>
+</section>
+<div aria-hidden="true" class="cinematic-transition" id="cinematicTransition">
+<div class="cinematic-line"></div><div class="cinematic-title" id="cinematicTitle">EDIT 01</div>
+</div>
+<div aria-hidden="true" class="modal" id="modal">
+<div class="modal-backdrop" data-close=""></div>
+<div aria-labelledby="modalTitle" aria-modal="true" class="modal-dialog" role="dialog">
+<button aria-label="Fechar" class="modal-close" data-close="" type="button">×</button>
+<button aria-label="Edit anterior" class="modal-nav modal-prev" id="modalPrev" type="button">‹</button>
+<button aria-label="Próxima edit" class="modal-nav modal-next" id="modalNext" type="button">›</button>
+<div class="modal-video" id="modalVideo"></div>
+<div class="modal-meta">
+<div class="modal-heading">
+<small id="modalCategory">G3NOS EDITZ</small>
+<strong id="modalTitle">Ascensão</strong>
+<p id="modalDescription"></p>
+</div>
+<div class="modal-project-data">
+<span id="modalCount">01 / 17</span>
+<span id="modalDuration">00:23</span>
+<span id="modalSoftware">After Effects</span>
+<span id="modalYear">2025</span>
+</div>
+<div class="modal-tags" id="modalTags"></div>
+<a href="#" id="modalLink" rel="noopener" target="_blank">Abrir no YouTube ↗</a>
+</div>
+</div>
+</div>
+<script src="script.js"></script>
+<script src="scene.js" type="module"></script>
 </body>
 </html>
