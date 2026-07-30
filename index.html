@@ -53,6 +53,7 @@
         <div class="hero-actions">
           <button class="btn btn-primary magnetic" type="button" data-open-index="0">Assistir destaque <b>▶</b></button>
           <a class="btn btn-ghost magnetic" href="#portfolio">Explorar trabalhos <b>↓</b></a>
+          <button class="btn btn-software magnetic" id="openWorkstation" type="button">Abrir workstation <b>⌘</b></button>
         </div>
         <div class="hero-metrics">
           <div><strong>2020</strong><span>início da jornada</span></div>
@@ -592,6 +593,110 @@
     <p>Editor desde 2020 • Portfólio 3D</p>
     <a href="#inicio">Voltar ao topo ↑</a>
   </footer>
+
+  
+  <section class="workstation" id="workstation" aria-hidden="true">
+    <div class="ws-window">
+      <header class="ws-topbar">
+        <div class="ws-brand"><i></i><strong>G3NOS EDITZ</strong><span>Creative Workstation 2026</span></div>
+        <nav class="ws-tabs" aria-label="Áreas da workstation">
+          <button class="active" data-ws-tab="projects" type="button">Projects</button>
+          <button data-ws-tab="composition" type="button">Composition</button>
+          <button data-ws-tab="effects" type="button">Effects</button>
+          <button data-ws-tab="render" type="button">Render</button>
+        </nav>
+        <button class="ws-close" id="closeWorkstation" type="button" aria-label="Fechar workstation">×</button>
+      </header>
+
+      <div class="ws-body">
+        <aside class="ws-sidebar">
+          <div class="ws-panel-title">PROJECT</div>
+          <button class="ws-folder active" type="button"><span>▾</span> G3nos Portfolio</button>
+          <button class="ws-folder" type="button"><span>⌁</span> Compositions <b>17</b></button>
+          <button class="ws-folder" type="button"><span>◫</span> Assets <b>48</b></button>
+          <button class="ws-folder" type="button"><span>✦</span> Effects <b>126</b></button>
+          <div class="ws-system">
+            <span>RENDER ENGINE</span>
+            <div><i></i> GPU Accelerated</div>
+            <small>WebGL • Three.js • GLSL</small>
+          </div>
+        </aside>
+
+        <main class="ws-main">
+          <section class="ws-view active" data-ws-view="projects">
+            <div class="ws-view-header">
+              <div><small>PROJECTS / G3NOS</small><h2>Compositions</h2></div>
+              <div class="ws-view-controls"><button type="button">▦</button><button type="button">☷</button></div>
+            </div>
+            <div class="ws-projects" id="wsProjects"></div>
+          </section>
+
+          <section class="ws-view" data-ws-view="composition">
+            <div class="ws-composition">
+              <div class="ws-preview">
+                <div class="ws-preview-screen" id="wsPreviewScreen">
+                  <img id="wsPreviewImage" alt="Preview do projeto selecionado">
+                  <div class="ws-safe-frame"></div>
+                  <button id="wsPreviewPlay" type="button">▶</button>
+                  <span id="wsPreviewTime">00:00:00:00</span>
+                </div>
+                <div class="ws-preview-controls"><span>25%</span><button type="button">◀</button><button type="button">▶</button><button type="button">▶▶</button><span>Full</span></div>
+              </div>
+              <aside class="ws-inspector" id="wsInspector"></aside>
+            </div>
+            <div class="ws-timeline">
+              <div class="ws-time-ruler"><span>00:00</span><span>00:05</span><span>00:10</span><span>00:15</span><span>00:20</span><span>00:25</span></div>
+              <div class="ws-playhead" id="wsPlayhead"></div>
+              <div class="ws-layer"><b>◉ VIDEO_MASTER</b><i style="--w:92%"></i></div>
+              <div class="ws-layer"><b>✦ ADJUSTMENT_FX</b><i style="--w:74%"></i></div>
+              <div class="ws-layer"><b>◈ COLOR_GRADE</b><i style="--w:88%"></i></div>
+              <div class="ws-layer"><b>⌁ PARTICLES</b><i style="--w:58%"></i></div>
+              <div class="ws-layer audio"><b>♫ AUDIO_SYNC</b><div class="ws-wave"></div></div>
+            </div>
+          </section>
+
+          <section class="ws-view" data-ws-view="effects">
+            <div class="ws-effects">
+              <div class="ws-effect-orb"><div></div><span>GLSL<br>CORE</span></div>
+              <div class="ws-effect-list">
+                <article><span>01</span><h3>Chromatic Aberration</h3><p>Separação dinâmica dos canais RGB.</p><i style="--v:76%"></i></article>
+                <article><span>02</span><h3>Energy Bloom</h3><p>Realce luminoso ligado à intensidade.</p><i style="--v:88%"></i></article>
+                <article><span>03</span><h3>Motion Trails</h3><p>Rastros temporais para reforçar velocidade.</p><i style="--v:64%"></i></article>
+                <article><span>04</span><h3>Digital Distortion</h3><p>Glitch procedural e deslocamento de pixels.</p><i style="--v:52%"></i></article>
+              </div>
+            </div>
+          </section>
+
+          <section class="ws-view" data-ws-view="render">
+            <div class="ws-render">
+              <div class="ws-render-ring"><strong id="renderPercent">0%</strong><span>RENDERING</span></div>
+              <h2>G3nos_Master_4K_FINAL.mp4</h2>
+              <p>Adobe Media Encoder • H.264 • 3840×2160 • Maximum Quality</p>
+              <button id="startRender" type="button">INICIAR RENDERIZAÇÃO</button>
+              <div class="ws-render-log" id="renderLog"><span>Ready to render.</span></div>
+            </div>
+          </section>
+        </main>
+
+        <aside class="ws-rightbar">
+          <div class="ws-panel-title">INFO</div>
+          <div class="ws-info" id="wsInfo"></div>
+          <div class="ws-panel-title">EFFECT CONTROLS</div>
+          <label>Bloom <input type="range" min="0" max="100" value="72"></label>
+          <label>Glow <input type="range" min="0" max="100" value="84"></label>
+          <label>Distortion <input type="range" min="0" max="100" value="38"></label>
+          <label>Chromatic <input type="range" min="0" max="100" value="51"></label>
+        </aside>
+      </div>
+
+      <footer class="ws-statusbar">
+        <span><i></i> PROJECT ONLINE</span>
+        <span>17 ITEMS</span>
+        <span>GPU: ACTIVE</span>
+        <span id="wsClock">00:00:00</span>
+      </footer>
+    </div>
+  </section>
 
   <div class="cinematic-transition" id="cinematicTransition" aria-hidden="true">
     <div class="cinematic-line"></div><div class="cinematic-title" id="cinematicTitle">EDIT 01</div>

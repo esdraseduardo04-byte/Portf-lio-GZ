@@ -1,15 +1,27 @@
-# G3nos Editz — 3D MAX
+# G3nos Editz — Creative Workstation AAA
 
-Versão máxima com WebGL real e Three.js.
+## Nova experiência
+- Workstation inspirada em After Effects
+- 17 arquivos `.aep` interativos
+- Projects, Composition, Effects e Render
+- Timeline animada com layers e waveform
+- Ficha técnica completa para cada projeto
+- Nomes cinematográficos como fallback
+- Tentativa automática de carregar o título real do YouTube via oEmbed
+- Preview integrado ao modal existente
+- Renderização simulada
+- Interface responsiva
 
-- Monitor 3D modelado por geometria
-- 17 painéis flutuantes
-- Anéis holográficos
-- Campo de partículas
-- Luzes volumétricas simuladas
-- Câmera ligada ao mouse e ao scroll
-- Portal 3D
-- Transição cinematográfica para os vídeos
-- Fallback para navegadores sem WebGL
+## Personalização
+Edite `projects.json` e o array `PROJECTS` no final de `script.js` para alterar:
+- nome
+- descrição
+- categoria
+- duração
+- ano
+- software
+- tags
+- cor própria
 
-Publique em HTTPS para carregar o módulo Three.js pelo CDN corretamente.
+## Publicação
+Envie todos os arquivos para o mesmo repositório do GitHub Pages.
